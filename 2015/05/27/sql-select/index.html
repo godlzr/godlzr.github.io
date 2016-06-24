@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      SQL Select | 里士满路1285号 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Zhongrui Li">
+    
+    
+
+    <meta name="description" content="在数据库操作语句中，使用最频繁，也被认为最重要的是SELECT查询语句。之前的实验中，我们已经在不少地方用到了 SELECT * FROM table_name; 这条语句用于查看一张表中的所有内容。 而SELECT与各种限制条件关键词搭配使用，具有各种丰富的功能，这次实验就进行详细介绍。
+1、基本的SELECT语句SELECT语句的基本格式为：
+&amp;lt;span class=&amp;quot;hljs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL Select | 里士满路1285号">
+<meta property="og:url" content="http://yoursite.com/2015/05/27/sql-select/index.html">
+<meta property="og:site_name" content="里士满路1285号">
+<meta property="og:description" content="在数据库操作语句中，使用最频繁，也被认为最重要的是SELECT查询语句。之前的实验中，我们已经在不少地方用到了 SELECT * FROM table_name; 这条语句用于查看一张表中的所有内容。 而SELECT与各种限制条件关键词搭配使用，具有各种丰富的功能，这次实验就进行详细介绍。
+1、基本的SELECT语句SELECT语句的基本格式为：
+&amp;lt;span class=&amp;quot;hljs">
+<meta property="og:updated_time" content="2016-06-24T03:45:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL Select | 里士满路1285号">
+<meta name="twitter:description" content="在数据库操作语句中，使用最频繁，也被认为最重要的是SELECT查询语句。之前的实验中，我们已经在不少地方用到了 SELECT * FROM table_name; 这条语句用于查看一张表中的所有内容。 而SELECT与各种限制条件关键词搭配使用，具有各种丰富的功能，这次实验就进行详细介绍。
+1、基本的SELECT语句SELECT语句的基本格式为：
+&amp;lt;span class=&amp;quot;hljs">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">里士满路1285号</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          在此虚度时光
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">SQL Select</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2015-05-27" class="post-meta__date date">2015-05-27</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/SQL/">SQL</a>
+            </font>
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>在数据库操作语句中，使用最频繁，也被认为最重要的是SELECT查询语句。之前的实验中，我们已经在不少地方用到了 <strong>SELECT * FROM table_name;</strong> 这条语句用于查看一张表中的所有内容。 而SELECT与各种限制条件关键词搭配使用，具有各种丰富的功能，这次实验就进行详细介绍。</p>
+<h3 id="1、基本的SELECT语句"><a href="#1、基本的SELECT语句" class="headerlink" title="1、基本的SELECT语句"></a>1、基本的SELECT语句</h3><p>SELECT语句的基本格式为：</p>
+<pre><code>&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; 要查询的列名 &lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; 表名字 &lt;span class=&quot;hljs-keyword&quot;&gt;WHERE&lt;/span&gt; 限制条件;&lt;/span&gt;
+`&lt;/pre&gt;
+如果要查询表的所有内容，则把**要查询的列名**用一个 * 号表示(实验2、3中都已经使用过)，代表要查询表中所有的列。 而大多数情况，我们只需要查看某个表的指定的列，比如要查看employee表的name和age：
+&lt;pre&gt;`&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; name,age &lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; employee;&lt;/span&gt;
+`&lt;/pre&gt;
+![01](https://dn-anything-about-doc.qbox.me/MySQL/sql-04-01.png/logoblackfont)
+
+### 2、数学符号条件
+
+SELECT语句常常会有WHERE限制条件，用于达到更加精确的查询。WHERE限制条件可以有数学符号 (**=,&amp;lt;,&amp;gt;,&amp;gt;=,&amp;lt;=**) ，刚才我们查询了name和age，现在稍作修改：
+&lt;pre&gt;`&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; name,age &lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; employee &lt;span class=&quot;hljs-keyword&quot;&gt;WHERE&lt;/span&gt; age&amp;gt;&lt;span class=&quot;hljs-number&quot;&gt;25&lt;/span&gt;;&lt;/span&gt;
+`&lt;/pre&gt;
+筛选出age大于25的结果：
+
+![02](https://dn-anything-about-doc.qbox.me/MySQL/sql-04-02.png/logoblackfont)
+
+或者查找一个名字为Mary的员工：
+&lt;pre&gt;`&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; name,age,phone &lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; employee &lt;span class=&quot;hljs-keyword&quot;&gt;WHERE&lt;/span&gt; name=&lt;span class=&quot;hljs-string&quot;&gt;&apos;Mary&apos;&lt;/span&gt;;&lt;/span&gt;
+`&lt;/pre&gt;
+结果当然是：
+
+![03](https://dn-anything-about-doc.qbox.me/MySQL/sql-04-03.png/logoblackfont)
+
+### 3、“AND”与“OR”
+
+从这两个单词就能够理解它们的作用。WHERE后面可以有不止一条限制，而根据条件之间的逻辑关系，可以用**OR(或)**和**AND(且)**连接：
+&lt;pre&gt;`&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; name,age &lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; employee &lt;span class=&quot;hljs-keyword&quot;&gt;WHERE&lt;/span&gt; age&amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;25&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;OR&lt;/span&gt; age&amp;gt;&lt;span class=&quot;hljs-number&quot;&gt;30&lt;/span&gt;;&lt;/span&gt;     #筛选出age小于25，或age大于30
+`&lt;/pre&gt;
+![04](https://dn-anything-about-doc.qbox.me/MySQL/sql-04-04.png/logoblackfont)
+&lt;pre&gt;`&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; name,age &lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; employee &lt;span class=&quot;hljs-keyword&quot;&gt;WHERE&lt;/span&gt; age&amp;gt;&lt;span class=&quot;hljs-number&quot;&gt;25&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;AND&lt;/span&gt; age&amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;30&lt;/span&gt;;&lt;/span&gt;    #筛选出age大于25，且age小于30
+`&lt;/pre&gt;
+![05](https://dn-anything-about-doc.qbox.me/MySQL/sql-04-05.png/logoblackfont)
+
+而刚才的限制条件 **age&amp;gt;25 AND age&amp;lt;30** 可以替换为 **age BETWEEN 25 AND 30** ，结果是一样的：
+
+![06](https://dn-anything-about-doc.qbox.me/MySQL/sql-04-06.png/logoblackfont)
+
+### 4、IN和NOT IN
+
+关键词**IN**和**NOT IN**的作用和它们的名字一样明显，用于筛选**“在”**或**“不在”**某个范围内的结果，比如说我们要查询在**dpt3**或**dpt4**的人:
+&lt;pre&gt;`&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; name,age,phone,in_dpt &lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; employee &lt;span class=&quot;hljs-keyword&quot;&gt;WHERE&lt;/span&gt; in_dpt &lt;span class=&quot;hljs-keyword&quot;&gt;IN&lt;/span&gt; (&lt;span class=&quot;hljs-string&quot;&gt;&apos;dpt3&apos;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&apos;dpt4&apos;&lt;/span&gt;);&lt;/span&gt;
+`&lt;/pre&gt;
+![07](https://dn-anything-about-doc.qbox.me/MySQL/sql-04-07.png/logoblackfont)
+
+而**NOT IN**的效果则是，如下面这条命令，查询出了不在**dpt1**也不在**dpt3**的人：
+&lt;pre&gt;`&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; name,age,phone,in_dpt &lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; employee &lt;span class=&quot;hljs-keyword&quot;&gt;WHERE&lt;/span&gt; in_dpt &lt;span class=&quot;hljs-keyword&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;IN&lt;/span&gt; (&lt;span class=&quot;hljs-string&quot;&gt;&apos;dpt1&apos;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&apos;dpt3&apos;&lt;/span&gt;);&lt;/span&gt;
+`&lt;/pre&gt;
+![08](https://dn-anything-about-doc.qbox.me/MySQL/sql-04-08.png/logoblackfont)
+
+### 5、通配符
+
+关键字 **LIKE** 在SQL语句中和通配符一起使用，通配符代表未知字符。SQL中的通配符是 _ 和 % 。其中 _ 代表一个未指定字符，% 代表**不定个**未指定字符。
+
+比如，要只记得电话号码前四位数为1101，而后两位忘记了，则可以用两个 _ 通配符代替：
+&lt;pre&gt;`&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; name,age,phone &lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; employee &lt;span class=&quot;hljs-keyword&quot;&gt;WHERE&lt;/span&gt; phone &lt;span class=&quot;hljs-keyword&quot;&gt;LIKE&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&apos;1101__&apos;&lt;/span&gt;;&lt;/span&gt;
+`&lt;/pre&gt;
+这样就查找出了**1101开头的6位数电话号码**：
+
+![09](https://dn-anything-about-doc.qbox.me/MySQL/sql-04-09.png/logoblackfont)
+
+另一种情况，比如只记名字的首字母，又不知道名字长度，则用 % 通配符代替不定个字符：
+&lt;pre&gt;`&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; name,age,phone &lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; employee &lt;span class=&quot;hljs-keyword&quot;&gt;WHERE&lt;/span&gt; name &lt;span class=&quot;hljs-keyword&quot;&gt;LIKE&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&apos;J%&apos;&lt;/span&gt;;&lt;/span&gt;
+`&lt;/pre&gt;
+这样就查找出了首字母为 **J** 的人：
+
+![10](https://dn-anything-about-doc.qbox.me/MySQL/sql-04-10.png/logoblackfont)
+
+### 6、对结果排序
+
+为了使查询结果看起来更顺眼，我们可能需要对结果按某一列来排序，这就要用到**ORDER BY** 排序关键词。默认情况下，**ORDER BY**的结果是**升序**排列，而使用关键词**ASC**和**DESC**可指定**升序**或**降序**排序。 比如，我们**按salary降序排列**，SQL语句为：
+&lt;pre&gt;`&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; name,age,salary,phone &lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; employee &lt;span class=&quot;hljs-keyword&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;BY&lt;/span&gt; salary &lt;span class=&quot;hljs-keyword&quot;&gt;DESC&lt;/span&gt;;&lt;/span&gt;
+`&lt;/pre&gt;
+![11](https://dn-anything-about-doc.qbox.me/MySQL/sql-04-11.png/logoblackfont)
+
+### 7、SQL内置函数和计算
+
+SQL允许对表中的数据进行计算。对此，SQL有5个内置函数，这些函数都对SELECT的结果做操作：
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;函数名：&lt;/th&gt;
+&lt;th&gt;COUNT&lt;/th&gt;
+&lt;th&gt;SUM&lt;/th&gt;
+&lt;th&gt;AVG&lt;/th&gt;
+&lt;th&gt;MAX&lt;/th&gt;
+&lt;th&gt;MIN&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;作用：&lt;/td&gt;
+&lt;td&gt;计数&lt;/td&gt;
+&lt;td&gt;求和&lt;/td&gt;
+&lt;td&gt;求平均值&lt;/td&gt;
+&lt;td&gt;最大值&lt;/td&gt;
+&lt;td&gt;最小值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&gt; 其中COUNT函数可用于任何数据类型(因为它只是计数)，而另4个函数都只能对数字类数据类型做计算。
+具体举例，比如计算出salary的最大、最小值，用这样的一条语句：
+&lt;pre&gt;`&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;MAX&lt;/span&gt;(salary) &lt;span class=&quot;hljs-keyword&quot;&gt;AS&lt;/span&gt; max_salary,&lt;span class=&quot;hljs-keyword&quot;&gt;MIN&lt;/span&gt;(salary) &lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; employee;&lt;/span&gt;
+`&lt;/pre&gt;
+有一个细节你或许注意到了，**使用AS关键词可以给值重命名**，比如最大值被命名为了max_salary：
+
+![12](https://dn-anything-about-doc.qbox.me/MySQL/sql-04-12.png/logoblackfont)
+
+### 8、子查询
+
+上面讨论的SELECT语句都仅涉及一个表中的数据，然而有时必须处理多个表才能获得所需的信息。例如：想要知道名为&quot;Tom&quot;的员工所在部门做了几个工程。员工信息储存在employee表中，但工程信息储存在project表中。 对于这样的情况，我们可以用子查询：
+&lt;pre&gt;`&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; of_dpt,&lt;span class=&quot;hljs-keyword&quot;&gt;COUNT&lt;/span&gt;(proj_name) &lt;span class=&quot;hljs-keyword&quot;&gt;AS&lt;/span&gt; count_project &lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; project
+&lt;span class=&quot;hljs-keyword&quot;&gt;WHERE&lt;/span&gt; of_dpt &lt;span class=&quot;hljs-keyword&quot;&gt;IN&lt;/span&gt;
+(&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; in_dpt &lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; employee &lt;span class=&quot;hljs-keyword&quot;&gt;WHERE&lt;/span&gt; name=&lt;span class=&quot;hljs-string&quot;&gt;&apos;Tom&apos;&lt;/span&gt;);&lt;/span&gt;
+`&lt;/pre&gt;
+![13](https://dn-anything-about-doc.qbox.me/MySQL/sql-04-13.png/logoblackfont)
+&gt; 子查询还可以扩展到3层、4层或更多层。
+
+### 9、连接查询
+
+在处理多个表时，子查询只有在结果来自一个表时才有用。但如果需要显示两个表或多个表中的数据，这时就必须使用连接**(join)**操作。 连接的基本思想是把两个或多个表当作一个新的表来操作，如下：
+&lt;pre&gt;`&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; id,name,people_num
+&lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; employee,department
+&lt;span class=&quot;hljs-keyword&quot;&gt;WHERE&lt;/span&gt; employee.in_dpt = department.dpt_name
+&lt;span class=&quot;hljs-keyword&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;BY&lt;/span&gt; id;&lt;/span&gt;
+`&lt;/pre&gt;
+这条语句查询出的是，各员工所在部门的人数，其中员工的id和name来自employee表，people_num来自department表：
+
+![14](https://dn-anything-about-doc.qbox.me/MySQL/sql-04-14.png/logoblackfont)
+
+另一个连接语句格式是使用JOIN ON语法，刚才的语句等同于：
+&lt;pre&gt;`&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; id,name,people_num
+&lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; employee &lt;span class=&quot;hljs-keyword&quot;&gt;JOIN&lt;/span&gt; department
+&lt;span class=&quot;hljs-keyword&quot;&gt;ON&lt;/span&gt; employee.in_dpt = department.dpt_name
+&lt;span class=&quot;hljs-keyword&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;BY&lt;/span&gt; id;&lt;/span&gt;
+</code></pre><p>结果也与刚才的语句相同。</p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

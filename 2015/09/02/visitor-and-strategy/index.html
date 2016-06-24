@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      2. Command，Interpreter，Visitor， Strategy and Template 命令，解释器，访问者，策略和模板方法模式 | 里士满路1285号 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Zhongrui Li">
+    
+    
+
+    <meta name="description" content="4.命令模式Command
+&amp;lt;span id=&amp;quot;docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2. Command，Interpreter，Visitor， Strategy and Template 命令，解释器，访问者，策略和模板方法模式 | 里士满路1285号">
+<meta property="og:url" content="http://yoursite.com/2015/09/02/visitor-and-strategy/index.html">
+<meta property="og:site_name" content="里士满路1285号">
+<meta property="og:description" content="4.命令模式Command
+&amp;lt;span id=&amp;quot;docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-a">
+<meta property="og:updated_time" content="2016-06-24T03:45:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2. Command，Interpreter，Visitor， Strategy and Template 命令，解释器，访问者，策略和模板方法模式 | 里士满路1285号">
+<meta name="twitter:description" content="4.命令模式Command
+&amp;lt;span id=&amp;quot;docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-a">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">里士满路1285号</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          在此虚度时光
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">2. Command，Interpreter，Visitor， Strategy and Template 命令，解释器，访问者，策略和模板方法模式</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2015-09-02" class="post-meta__date date">2015-09-02</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/Behavioural-Patterns/">Behavioural Patterns</a>
+            </font>
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 255); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">4.命令模式<a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.behavioural/command" target="_blank" rel="external">Command</a></span></span></p>
+<pre><code>&lt;span id=&quot;docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a&quot;&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;将一个请求封装为一个对象，从而使我们可用不同的请求对客户进行参数化； 对请求排队或者记录请求日志，以及支持可撤销的操作。也称为：动作模式action 事务模式transaction。&lt;/span&gt;&lt;/span&gt;
+
+&lt;span id=&quot;docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a&quot;&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;结构：&lt;/span&gt;&lt;/span&gt;
+</code></pre><ol>
+<li><p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">Command 抽象命令类</span></span></p>
+</li>
+<li><p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">ConcreteCommand具体命令类</span></span></p>
+</li>
+<li><p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">Invoker调用者</span></span></p>
+</li>
+<li><p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">Receiver接受者</span></span></p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">开发中的场景：Struts2中，action的整个调用过程就是命令模式， 数据库事务机制的底层实现</span></span></p>
+<p>&nbsp;</p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 255); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">5.解释器模式 Interpreter</span></span></p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">不常用，开发新的语言时，可以考虑使用解释器模式。主要用于描述如何构成一个简单的语言解释器，主要用于使用面向对象语言开发的编译器和解释器设计。</span></span></p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">在项目中可以使用js引擎等动态语言来替代解释器的作用，弥补java语言的不足。</span></span></p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">开发中的场景：EL表达式，正则表达式，SQL语法，数学表达式</span></span></p>
+<p>&nbsp;</p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 255); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">6.访问者模式 Visitor</span></span></p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">对于存储在一个集合中的对象，他们可能具有不同的类型，对于该集合中的对象，可以接受一类称为访问者的对象来访问，不同的访问者其访问方式也有所不同</span></span></p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">开发中的场景：XML文档解释器设计，编译器设计，复杂集合对象的处理</span></span></p>
+<p>&nbsp;</p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 255); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">7.策略模式 <a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.behavioural/strategy" target="_blank" rel="external">Strategy</a></span></span></p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">策略模式对应于解决某一个问题的一个算法族，允许用户从该算法族中任选一个算法解决某一个问题，同时可以方便的更换算法或者增加新的算法。并且由客户端决定调用哪个算法。</span></span></p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">策略接口，具体的策略类，上下文类管理策略</span></span></p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">开发中的场景：spring中 resource接口，资源访问策略</span></span></p>
+<p>&nbsp;</p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 255); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">8.模板方法模式 <a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.behavioural/templateMethod" target="_blank" rel="external">Template</a></span></span></p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">场景：客户到银行办理业务，1.取号排队2.办理具体业务3.给柜员评分。</span></span></p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">定义了算法的骨架，某些步骤延迟到子类中实现，新的子类可以在不改变一个算法结构的前提下重新定义该算法的某些特定步骤。</span></span></p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">又称为方法回调，钩子方法，</span></span></p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">实现算法时整体步骤固定，某些步骤易变，易变的部分可以抽象出来供子类实现。</span></span></p>
+<p><span id="docs-internal-guid-b09b2da6-8ee0-a5cd-8380-516910d54b7a"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">开发中的场景：数据库访问封装，Junit，hibernate模板。</span></span></p>
+</li>
+</ol>
+<div><br>    &nbsp;<br></div>
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

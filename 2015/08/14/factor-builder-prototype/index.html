@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      2. Factor, Builder, Prototype 工厂模式, 建造者模式和原型模式 | 里士满路1285号 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Zhongrui Li">
+    
+    
+
+    <meta name="description" content="2.工厂模式，实现创建者和调用者的分离
+&amp;lt;span id=&amp;quot;docs-internal-guid-4aa9959f-2d58-0d77-87de-ff60ff20a0e6&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vert">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2. Factor, Builder, Prototype 工厂模式, 建造者模式和原型模式 | 里士满路1285号">
+<meta property="og:url" content="http://yoursite.com/2015/08/14/factor-builder-prototype/index.html">
+<meta property="og:site_name" content="里士满路1285号">
+<meta property="og:description" content="2.工厂模式，实现创建者和调用者的分离
+&amp;lt;span id=&amp;quot;docs-internal-guid-4aa9959f-2d58-0d77-87de-ff60ff20a0e6&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vert">
+<meta property="og:updated_time" content="2016-06-24T03:45:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2. Factor, Builder, Prototype 工厂模式, 建造者模式和原型模式 | 里士满路1285号">
+<meta name="twitter:description" content="2.工厂模式，实现创建者和调用者的分离
+&amp;lt;span id=&amp;quot;docs-internal-guid-4aa9959f-2d58-0d77-87de-ff60ff20a0e6&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vert">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">里士满路1285号</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          在此虚度时光
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">2. Factor, Builder, Prototype 工厂模式, 建造者模式和原型模式</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2015-08-14" class="post-meta__date date">2015-08-14</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/Creational-Patterns/">Creational Patterns</a>
+            </font>
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p><span id="docs-internal-guid-4aa9959f-2d58-0d77-87de-ff60ff20a0e6"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 255); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">2.工厂模式，实现创建者和调用者的分离</span></span></p>
+<pre><code>&lt;span id=&quot;docs-internal-guid-4aa9959f-2d58-0d77-87de-ff60ff20a0e6&quot;&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;分为 &lt;/span&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); font-style: italic; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;简单工厂模式&lt;/span&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;，&lt;/span&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); font-style: italic; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;工厂方法模式&lt;/span&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;，&lt;/span&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); font-style: italic; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;抽象工厂模式&lt;/span&gt;&lt;/span&gt;
+
+&lt;span id=&quot;docs-internal-guid-4aa9959f-2d58-0d77-87de-ff60ff20a0e6&quot;&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;面向对象的基本设计原则，&lt;/span&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;分工&lt;/span&gt;&lt;/span&gt;
+
+&lt;span id=&quot;docs-internal-guid-4aa9959f-2d58-0d77-87de-ff60ff20a0e6&quot;&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;OCP(open close principle): 一个软件的实体应当对扩展开发对修改关闭，添加新类来扩展功能&lt;/span&gt;&lt;/span&gt;
+
+&lt;span id=&quot;docs-internal-guid-4aa9959f-2d58-0d77-87de-ff60ff20a0e6&quot;&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;DIP(dependency Inversion Principle): 针对接口编程，不要针对实现编程&lt;/span&gt;&lt;/span&gt;
+
+&lt;span id=&quot;docs-internal-guid-4aa9959f-2d58-0d77-87de-ff60ff20a0e6&quot;&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;LoD(Law of Demeter): 只与你直接的朋友通信，而避免和陌生人通信&lt;/span&gt;&lt;/span&gt;
+</code></pre><ul>
+<li><span id="docs-internal-guid-4aa9959f-2d58-0d77-87de-ff60ff20a0e6"><span style="font-size: 14.6666666666667px; font-family: Arial; font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">_<u><strong><a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/src/com/godlzr/GOF23/factory/simpleFactory" target="_blank" rel="external"><span style="color:#FF0000;">简单工厂模式</span></a></strong></u>_</span><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(56, 118, 29); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">:</span><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;"> </span><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">静态工厂，方法都是静态的， 通过接受不同参数创建不同实例， 增加新的类需要修改已有方法，扩展困难, 实际使用最多。</span></span></li>
+<li><span id="docs-internal-guid-4aa9959f-2d58-0d77-87de-ff60ff20a0e6"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(56, 118, 29); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;"><a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/src/com/godlzr/GOF23/factory/facotryMethod" target="_blank" rel="external">工厂方法模式</a>：</span><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">避免了简单工厂不满足ocp的缺点，简单工厂只有一个工厂类，而工厂方法模式有一组实现了相同接口的工厂类（</span><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(255, 0, 0); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">一般都用简单工厂模式</span><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">), 不修改已有类的前提下，增加新的工厂类来实现扩展</span></span></li>
+<li><p><span id="docs-internal-guid-4aa9959f-2d58-0d77-87de-ff60ff20a0e6"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(56, 118, 29); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;"><a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/src/com/godlzr/GOF23/factory/abstractFactory" target="_blank" rel="external">抽象工厂模式</a>：</span><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">用来生成不同</span><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(255, 0, 0); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">产品族</span><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">的全部产品， 工厂方法的升级版，不能增加产品，但能增加产品族。</span></span></p>
+<p><span id="docs-internal-guid-4aa9959f-2d59-3f8c-0b02-4fd6a6d4fb76"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 255); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">3.<a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/src/com/godlzr/GOF23/builder" target="_blank" rel="external">建造者模式</a></span></span></p>
+<p><span id="docs-internal-guid-4aa9959f-2d59-3f8c-0b02-4fd6a6d4fb76"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">对象的组件多，装配顺序复杂</span></span></p>
+<p><span id="docs-internal-guid-4aa9959f-2d59-3f8c-0b02-4fd6a6d4fb76"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">装配的问题，零件之间有一个装配顺序，分离了对象子组件的单独构造（<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/src/com/godlzr/GOF23/builder/godlzrAirshipBuilder.java" target="_blank" rel="external">builder</a>）和装配（<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/src/com/godlzr/GOF23/builder/godlzrAirshipDirector.java" target="_blank" rel="external">director</a>）</span></span></p>
+<p><span id="docs-internal-guid-4aa9959f-2d59-3f8c-0b02-4fd6a6d4fb76"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">实现了构建和装配的解耦，不同的构建器，相同的装配器，构建不同的对象。相同的构建器，不同的装配器，构建不同的对象。实现了构建算法和装配算法的解耦，有很好的复用性。</span></span></p>
+<p>&nbsp;</p>
+<p><span id="docs-internal-guid-4aa9959f-3415-2f2f-5dba-5ed82fea99fe"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 255); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">4.</span><span style="color:#FF0000;"><span style="font-size: 14.6666666666667px; font-family: Arial; font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">原型模式 </span></span><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 255); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;"><a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/src/com/godlzr/GOF23/prototype" target="_blank" rel="external">Prototype</a>（克隆模式）</span></span></p>
+<p><span id="docs-internal-guid-4aa9959f-3415-2f2f-5dba-5ed82fea99fe"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">以</span><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">某个对象为原型，复制拷贝出新的对象，实现数据的复用。新对象具备原型对象的特点。</span></span></p>
+<p><span id="docs-internal-guid-4aa9959f-3415-2f2f-5dba-5ed82fea99fe"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">优势：效率高</span></span></p>
+<p><span id="docs-internal-guid-4aa9959f-3415-2f2f-5dba-5ed82fea99fe"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">克隆类似于new，但new的对象的属性采用默认值，克隆的对象属性与原型一样。克隆的对象改变不会影响原型。例如，opencv中 mat 的clone(), copyTo().</span></span></p>
+<p><span id="docs-internal-guid-4aa9959f-3415-2f2f-5dba-5ed82fea99fe"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">有</span><a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/src/com/godlzr/GOF23/prototype/Sheep.java" target="_blank" rel="external"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(153, 0, 0); font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">深克隆</span></a><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">，</span><a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/src/com/godlzr/GOF23/prototype/Sheep2.java" target="_blank" rel="external"><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(153, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">浅克隆</span></a><span style="font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">之分。 对浅克隆来说，如果对象中的某些属性也是对象，则克隆的对象与原型对象的同一个属性对象在内存中只有一个，该属性对象并没有被复制。如果修改了该属性，则无论是克隆对象和原型对象的该属性都被修改。</span></span></p>
+</li>
+</ul>
+<pre class="brush:java;">
+public class Sheep implements Cloneable{ 
+
+    private String sname;
+    private Date birthday;
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        Object obj = super.clone();//直接调用object的clone方法
+
+        //实现deep clone
+        Sheep s = (Sheep)obj;
+        s.birthday = (Date) this.birthday.clone();//把属性也进行克隆
+        return obj;
+    }
+}</pre>
+
+<pre><code>&lt;span id=&quot;docs-internal-guid-4aa9959f-3415-2f2f-5dba-5ed82fea99fe&quot;&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;实现深克隆就要把原型对象的所有属性都复制。&lt;/span&gt;&lt;/span&gt;
+
+&lt;span id=&quot;docs-internal-guid-4aa9959f-3415-2f2f-5dba-5ed82fea99fe&quot;&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(153, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;深克隆&lt;/span&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;可以利用[序列化和反序列化技术实现](https://github.com/godlzr/GOF23_DesignPattern/blob/master/src/com/godlzr/GOF23/prototype/Client2.java)。&lt;/span&gt;&lt;/span&gt;
+</code></pre><pre class="brush:java;">
+public static void main(String[] args) throws  IOException, ClassNotFoundException {
+        Date date = new Date(11123123L);
+        Sheep2 s1 = new Sheep2(&quot;Dori&quot;, date);
+
+        //使用序列化将对象输出到数据流
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(bos);
+        oos.writeObject(s1);//输出s1的拷贝
+        byte[] bytes = bos.toByteArray();
+
+        //使用反序列化将数据流中的对象读入并实现深克隆
+        ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
+        ObjectInputStream ois = new ObjectInputStream(bis);
+        Sheep2 s2 = (Sheep2) ois.readObject();//拷贝给s2
+}</pre>
+
+<pre><code>&lt;span id=&quot;docs-internal-guid-4aa9959f-3427-993b-7b1b-0597efd2c0fb&quot;&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(153, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;[使用情景](https://github.com/godlzr/GOF23_DesignPattern/blob/master/src/com/godlzr/GOF23/prototype/Client3.java)：使用new创建对象很耗时间时，利用原型模式拷贝来提高效率。&lt;/span&gt;&lt;/span&gt;
+
+&lt;span id=&quot;docs-internal-guid-4aa9959f-3427-993b-7b1b-0597efd2c0fb&quot;&gt;&lt;span style=&quot;font-size: 14.6666666666667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;&quot;&gt;原型模式一般和工厂模式结合起来&lt;/span&gt;&lt;/span&gt;
+</code></pre><div><br>    &nbsp;<br></div>
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

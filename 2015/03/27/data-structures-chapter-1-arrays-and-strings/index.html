@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Data Structures----Chapter 1 Arrays and Strings | 里士满路1285号 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Zhongrui Li">
+    
+    
+
+    <meta name="description" content="1.1 Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
+首先确定构成字符串的字符集有多大？是ASCII字符，还是只是26个字母？ 还是有更大的字符集，对于不同的情况，我们可能会有不同的解决方案。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data Structures----Chapter 1 Arrays and Strings | 里士满路1285号">
+<meta property="og:url" content="http://yoursite.com/2015/03/27/data-structures-chapter-1-arrays-and-strings/index.html">
+<meta property="og:site_name" content="里士满路1285号">
+<meta property="og:description" content="1.1 Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
+首先确定构成字符串的字符集有多大？是ASCII字符，还是只是26个字母？ 还是有更大的字符集，对于不同的情况，我们可能会有不同的解决方案。">
+<meta property="og:image" content="https://lh5.googleusercontent.com/-PYq_I9DzGWo/VRnY2DG2GHI/AAAAAAAAANc/k3vpW6fQHaI/w1258-h1230-no/IMG_20150330_191308~2.jpg">
+<meta property="og:updated_time" content="2016-06-24T03:45:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Data Structures----Chapter 1 Arrays and Strings | 里士满路1285号">
+<meta name="twitter:description" content="1.1 Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
+首先确定构成字符串的字符集有多大？是ASCII字符，还是只是26个字母？ 还是有更大的字符集，对于不同的情况，我们可能会有不同的解决方案。">
+<meta name="twitter:image" content="https://lh5.googleusercontent.com/-PYq_I9DzGWo/VRnY2DG2GHI/AAAAAAAAANc/k3vpW6fQHaI/w1258-h1230-no/IMG_20150330_191308~2.jpg">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">里士满路1285号</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          在此虚度时光
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Data Structures----Chapter 1 Arrays and Strings</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2015-03-27" class="post-meta__date date">2015-03-27</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/Cracking-the-Coding-Interview-Fifth-edition/">Cracking the Coding Interview (Fifth edition)</a>
+            </font>
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h6 id="1-1-Implement-an-algorithm-to-determine-if-a-string-has-all-unique-characters-What-if-you-cannot-use-additional-data-structures"><a href="#1-1-Implement-an-algorithm-to-determine-if-a-string-has-all-unique-characters-What-if-you-cannot-use-additional-data-structures" class="headerlink" title="1.1 Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?"></a>1.1 Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?</h6><ul>
+<li>首先确定构成字符串的字符集有多大？是ASCII字符，还是只是26个字母？ 还是有更大的字符集，对于不同的情况，我们可能会有不同的解决方案。</li>
+<li>ASCII：标准ASCII 码也叫基础ASCII码，使用8 位二进制数来表示所有的大写和小写字母，数字0 到9、标点符号， 以及在美式英语中使用的特殊控制字符， ASCII 码表共有<strong>258</strong>位字符。</li>
+<li>如果我们假设字符集是ASCII字符，那么我们可以开一个大小为256的bool数组来表征每个字符的出现。数组初始化为false，遍历一遍字符串中的字符，当bool数组对应位置的值为真， 表明该字符在之前已经出现过，即可得出该字符串中有重复字符。否则将该位置的bool数组 值置为true。</li>
+<li><a href="https://github.com/godlzr/CrackingCodingInterview/blob/master/src/com/ArrayString/DataStructures/stringHelper.java" title="Implementation" target="_blank" rel="external">Q1.1_Implementation</a></li>
+</ul>
+<h6 id="1-2-Implement-a-function-void-reverse-char-str-in-C-or-C-which-reverses-a-null-terminated-string"><a href="#1-2-Implement-a-function-void-reverse-char-str-in-C-or-C-which-reverses-a-null-terminated-string" class="headerlink" title="1.2 Implement a function void reverse(char *str) in C or C++ which reverses a null terminated string."></a>1.2 Implement a function void reverse(char *str) in C or C++ which reverses a null terminated string.</h6><ul>
+<li>使用C++位操作,做地址交换。</li>
+</ul>
+<hr>
+<p><span style="color:#993366;">    a1                0101110101</span></p>
+<p><span style="color:#993366;">    b1                1011101011</span></p>
+<p><span style="color:#993366;">a2 = a1^b1      1110011110</span></p>
+<p><span style="color:#993366;">b2 = a2^b1      0101110101(a1)</span></p>
+<p><span style="color:#993366;">a3 = a2^b2      1011101011(b1)</span></p>
+<hr>
+<ul>
+<li>获取字符串长度，从首尾两端开始两两交换。</li>
+<li><a href="https://github.com/godlzr/CrackingCodingInterviewCpp/blob/master/CrackingCodingInterviewCpp/stringHelper.cpp" title="Q1.2_Imp" target="_blank" rel="external">Q1.2_Implementation</a></li>
+</ul>
+<h6 id="1-3-Given-two-strings-write-a-method-to-decide-if-one-is-a-permutation-of-the-other"><a href="#1-3-Given-two-strings-write-a-method-to-decide-if-one-is-a-permutation-of-the-other" class="headerlink" title="1.3 Given two strings, write a method to decide if one is a permutation of the other."></a>1.3 Given two strings, write a method to decide if one is a permutation of the other.</h6><ul>
+<li>将字符串转换成字符数组（toCharArray()）后排序(Arrays.sort())</li>
+<li>然后比较两个字符数组(Arrays.equals(string a, string b))</li>
+<li><a href="https://github.com/godlzr/CrackingCodingInterview/blob/master/src/com/ArrayString/DataStructures/stringHelper.java" title="Implementation" target="_blank" rel="external">Q1.3_Implementation</a></li>
+</ul>
+<h6 id="1-4-Write-a-method-to-replace-all-spaces-in-a-string-with-‘-20’-You-may-assume-that-the-string-has-sufficient-space-at-the-end-of-the-string-to-hold-the-additional-characters-and-that-you-are-given-the-“true”-length-of-the-string-Note-if-implementing-in-Java-please-use-a-character-array-so-that-you-can-perform-this-operation-in-place"><a href="#1-4-Write-a-method-to-replace-all-spaces-in-a-string-with-‘-20’-You-may-assume-that-the-string-has-sufficient-space-at-the-end-of-the-string-to-hold-the-additional-characters-and-that-you-are-given-the-“true”-length-of-the-string-Note-if-implementing-in-Java-please-use-a-character-array-so-that-you-can-perform-this-operation-in-place" class="headerlink" title="1.4 Write a method to replace all spaces in a string with ‘%20’. You may assume that the string has sufficient space at the end of the string to hold the additional characters, and that you are given the “true” length of the string.(Note: if implementing in Java, please use a character array so that you can perform this operation in place.)"></a>1.4 Write a method to replace all spaces in a string with ‘%20’. You may assume that the string has sufficient space at the end of the string to hold the additional characters, and that you are given the “true” length of the string.(Note: if implementing in Java, please use a character array so that you can perform this operation in place.)</h6><p>EXAMPLE</p>
+<p>Input: “Mr_John_Smith”,13</p>
+<p>Output:”Mr%20John%20Smith”</p>
+<ul>
+<li>首先遍历字符串记录空格个数，计算新的 字符串长度=原长度+2*空格数</li>
+<li>将原字符串的内容以此填入新的字符串，遇到空格填入“%20”</li>
+<li><a href="https://github.com/godlzr/CrackingCodingInterview/blob/master/src/com/ArrayString/DataStructures/stringHelper.java" title="Implementation" target="_blank" rel="external">Q1.4_Implementation</a></li>
+</ul>
+<h6 id="1-5-Implement-a-method-to-perform-basic-string-compression-using-the-counts-of-repeated-characters-For-example-the-string-aabccccccaaa-would-become-a2b1c5a3-If-the-“compressed”-string-would-not-become-smaller-than-the-original-string-you-method-should-return-the-original-string-You-can-assume-the-string-has-only-upper-and-lower-case"><a href="#1-5-Implement-a-method-to-perform-basic-string-compression-using-the-counts-of-repeated-characters-For-example-the-string-aabccccccaaa-would-become-a2b1c5a3-If-the-“compressed”-string-would-not-become-smaller-than-the-original-string-you-method-should-return-the-original-string-You-can-assume-the-string-has-only-upper-and-lower-case" class="headerlink" title="1.5 Implement a method to perform basic string compression using the counts of repeated characters. For example, the string aabccccccaaa would become a2b1c5a3. If the “compressed” string would not become smaller than the original string, you method should return the original string. You can assume the string has only upper and lower case."></a>1.5 Implement a method to perform basic string compression using the counts of repeated characters. For example, the string aabccccccaaa would become a2b1c5a3. If the “compressed” string would not become smaller than the original string, you method should return the original string. You can assume the string has only upper and lower case.</h6><ul>
+<li>建立一个新的StringBuffer字符串newstr，和count.</li>
+<li>遍历字符串str, 计算压缩后的长度, 判断两个字符串长度，如果newstr长度不小于str长度，输出str.</li>
+<li>第一个字符写入newstr</li>
+<li>后一个字符和前一个字符相同则count++，不同则将数字写入newstr，后count=0，写入新的字符</li>
+<li>遍历完成，输出newstr</li>
+<li><a href="https://github.com/godlzr/CrackingCodingInterview/blob/master/src/com/ArrayString/DataStructures/stringHelper.java" title="Implementation" target="_blank" rel="external">Q1.5_Implementation</a></li>
+</ul>
+<h6 id="1-6-Given-an-image-represented-by-an-NxN-matrix-where-each-pixel-in-the-image-is-4-bytes-write-a-method-to-rotate-the-image-by-90-degrees-Can-you-do-this-in-place"><a href="#1-6-Given-an-image-represented-by-an-NxN-matrix-where-each-pixel-in-the-image-is-4-bytes-write-a-method-to-rotate-the-image-by-90-degrees-Can-you-do-this-in-place" class="headerlink" title="1.6 Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?"></a>1.6 Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?</h6><ul>
+<li>Do this in place, 即不开辟新的空间，在原数据结构中操作</li>
+<li>我们可以将matrix由外之内分层，一层一层进行旋转操作</li>
+<li><img src="https://lh5.googleusercontent.com/-PYq_I9DzGWo/VRnY2DG2GHI/AAAAAAAAANc/k3vpW6fQHaI/w1258-h1230-no/IMG_20150330_191308~2.jpg" alt=""></li>
+<li><a href="https://github.com/godlzr/CrackingCodingInterview/blob/master/src/com/ArrayString/DataStructures/matrixHelper.java" target="_blank" rel="external">Q1.6_Implementation</a></li>
+</ul>
+<h6 id="1-7-Write-an-algorithm-such-that-if-an-element-in-an-MxN-matrix-is-0-its-entire-row-and-column-are-set-to-0"><a href="#1-7-Write-an-algorithm-such-that-if-an-element-in-an-MxN-matrix-is-0-its-entire-row-and-column-are-set-to-0" class="headerlink" title="1.7 Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0"></a>1.7 Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0</h6><ul>
+<li>建立两个一维数组，分别对应矩阵的长和宽，并赋值false</li>
+<li>遍历矩阵，遇到0，将对应长款数组中的元素赋值为true</li>
+<li>遍历矩阵，如果当前元素的行号列号在长宽数组中为true，将该元素置为0</li>
+<li><a href="https://github.com/godlzr/CrackingCodingInterview/blob/master/src/com/ArrayString/DataStructures/matrixHelper.java" target="_blank" rel="external">Q1.7_Implementation</a></li>
+</ul>
+<h6 id="1-8-Assume-you-have-a-method-isSubstring-which-checks-if-one-word-is-a-substring-of-another-Given-two-strings-s1-and-s2-write-code-to-check-if-s2-is-a-rotation-of-s1-using-only-one-call-to-isString-e-g-“waterbottle”-is-a-rotation-of-“erbottlewat”"><a href="#1-8-Assume-you-have-a-method-isSubstring-which-checks-if-one-word-is-a-substring-of-another-Given-two-strings-s1-and-s2-write-code-to-check-if-s2-is-a-rotation-of-s1-using-only-one-call-to-isString-e-g-“waterbottle”-is-a-rotation-of-“erbottlewat”" class="headerlink" title="1.8 Assume you have a method isSubstring( ) which checks if one word is a substring of another. Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 using only one call to isString( ) (e.g., “waterbottle” is a rotation of “erbottlewat”)."></a>1.8 Assume you have a method <em>isSubstring( )</em> which checks if one word is a substring of another. Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 using only one call to <em>isString( ) </em>(e.g., “waterbottle” is a rotation of “erbottlewat”).</h6><ul>
+<li>isSubstring( )可以用 String.isContatin()实现</li>
+<li>如果字符串是一个旋转字符串，则首位应该相连，如“erbottlewat”中 “er”与“wat”相连</li>
+<li>如果将这个字符串，复制拼接“erbottle<strong>wat</strong>”+“<strong>erbottle</strong>wat”=“erbottle<strong>waterbottle</strong>wat”，则其中一定含有一个完整的字串</li>
+<li>所以判断(s1+s1).isSubString(s2)</li>
+<li><a href="https://github.com/godlzr/CrackingCodingInterview/blob/master/src/com/ArrayString/DataStructures/stringHelper.java" title="im" target="_blank" rel="external">Q1.8_Implementation</a></li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

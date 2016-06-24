@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      OpenGL pipeline | 里士满路1285号 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Zhongrui Li">
+    
+    
+
+    <meta name="description" content="渲染：计算机根据模型创建图象。
+_**模型**_（或物体）是由_**几何图元**_构成的，而_**几何图元**_是通过_**顶点(顶点数据)**_来指定的。可以这样理解，顶点数据即几何图元的数学表示。
+
+最终渲染的图象由屏幕_**像素**_组成。_**像素（pixel）**_是显示硬件能够放置到屏幕上的最小的可视元素。有关像素的信息（如颜色）在系统内存中被组织为位面（bitplane）。位面构成了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenGL pipeline | 里士满路1285号">
+<meta property="og:url" content="http://yoursite.com/2015/08/03/opengl-pipeline/index.html">
+<meta property="og:site_name" content="里士满路1285号">
+<meta property="og:description" content="渲染：计算机根据模型创建图象。
+_**模型**_（或物体）是由_**几何图元**_构成的，而_**几何图元**_是通过_**顶点(顶点数据)**_来指定的。可以这样理解，顶点数据即几何图元的数学表示。
+
+最终渲染的图象由屏幕_**像素**_组成。_**像素（pixel）**_是显示硬件能够放置到屏幕上的最小的可视元素。有关像素的信息（如颜色）在系统内存中被组织为位面（bitplane）。位面构成了">
+<meta property="og:updated_time" content="2016-06-24T03:45:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenGL pipeline | 里士满路1285号">
+<meta name="twitter:description" content="渲染：计算机根据模型创建图象。
+_**模型**_（或物体）是由_**几何图元**_构成的，而_**几何图元**_是通过_**顶点(顶点数据)**_来指定的。可以这样理解，顶点数据即几何图元的数学表示。
+
+最终渲染的图象由屏幕_**像素**_组成。_**像素（pixel）**_是显示硬件能够放置到屏幕上的最小的可视元素。有关像素的信息（如颜色）在系统内存中被组织为位面（bitplane）。位面构成了">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">里士满路1285号</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          在此虚度时光
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">OpenGL pipeline</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2015-08-03" class="post-meta__date date">2015-08-03</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/OpenGL/">OpenGL</a>
+            </font>
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>渲染：计算机根据模型创建图象。</p>
+<pre><code>_**模型**_（或物体）是由_**几何图元**_构成的，而_**几何图元**_是通过_**顶点(顶点数据)**_来指定的。可以这样理解，顶点数据即几何图元的数学表示。
+
+最终渲染的图象由屏幕_**像素**_组成。_**像素（pixel）**_是显示硬件能够放置到屏幕上的最小的可视元素。有关像素的信息（如颜色）在系统内存中被组织为位面（bitplane）。位面构成了帧缓存（包含图形显示设备为控制屏幕上所有像素的颜色和亮度所需的信息）。&amp;nbsp;
+
+1、使用几何图元建立模型，从而得到物体的数学描述。（OpenGL将点、直线、多边形、图形和位图视为图元）；&amp;nbsp;
+
+2、在三维空间排列物体，选择观察场景的有利位置；&amp;nbsp;
+
+3、计算所有物体的颜色。颜色可能是由应用程序指定的、根据光照条件确定的、将问题粘贴到物体上得到的，也可能是上述多种操作的结果；&amp;nbsp;
+
+4、将物体的数学描述和相关的颜色信息转换为屏幕像素，这被称为_**光栅化（）**_。&amp;nbsp;
+
+当我们把绘制的图形传递给OpenGL后，OpenGL还要做许多才能完成3D空间到屏幕的投影。这一系列的过程称为OpenGL渲染流水线。一般的渲染流水线过程有如下几步： 显示列表 求值程序 顶点操作 图元装配 像素操作 纹理装配 光栅化 片断操作
+
+[![open1](http://godlzr.com/wp-content/uploads/2015/08/open1.jpg)](http://godlzr.com/wp-content/uploads/2015/08/open1.jpg)
+
+&amp;nbsp;
+
+OpenGL pipeline 可以分为两部分，一部分是对**顶点数据(Vertex data)**的操作，另一部分是对**像素数据(Pixel data)**的操作。
+
+1.首先，**顶点数据**和**像素数据**都可以保存在**显示列表(Display list)**当中，用来维护一定的执行顺序。
+
+2.**求值器(Evaluators)，**将几何图元用顶点数据来表示，求值器根据顶点计算出图元的数学表达方法，多数情况下是一种多项式映射，简单的理解为一个函数表达式，可以进一步计算该图元上的某顶点的信息(表面法线，纹理坐标，颜色，空间坐标)。
+
+3\. **顶点操作**接着，对于顶点数据，可以做一系列的操作，包括几何变换，还有纹理光照等一系列的着色操作，这里就可以使用shader着色器，所以这一步也是vertex shader。然后将顶点变换为图元。
+
+4.&amp;nbsp;**图元装配(primitive assembly)，**根据一定的透视规则裁剪图元并将单个图元装配成完整的几何图元。
+
+**像素操作(pixel operations) **即对像素做一些对应的操作.
+
+5.像素操作之后即**纹理装配(texture assembly)**，包括一系列的纹理贴图与定位。
+
+6\. **光栅化(Rasterization)**, 将几何数据与像素数据合并转换为**片段(fragment)**，即帧缓冲中的像素， 把顶点连接起来并填充内部像素。
+
+7.**片段操作(fragment operation)**,一系列操作（&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 26px;&quot;&gt;这里也可以运用shader即**fragment shader**&lt;/span&gt;）之后生成最终的帧，存入**帧缓冲(frame buffer)。**
+
+&amp;nbsp;
+
+简单来说，Data--&amp;gt; vertex shader (将数据转化为顶点)--&amp;gt;rasterization(连接顶点并填充三角形)--&amp;gt; fragment shader(根据几何图元加载颜色生成像素)--&amp;gt;output image(根据像素生成图片)--&amp;gt;在屏幕上显示
+</code></pre>
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
