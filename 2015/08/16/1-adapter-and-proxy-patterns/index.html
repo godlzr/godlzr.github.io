@@ -7,7 +7,7 @@
     
 
     <title>
-      1. Adapter and Proxy Patterns 适配器模式和代理模式 | 里士满路1285号 
+      1. Adapter and Proxy Patterns 适配器模式和代理模式 | 里士满路1285号
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -56,10 +56,10 @@
 
 模型中的角色
 *   &amp;lt;span id=&amp;quot;docs-internal-guid-9d">
+
     
     
-    
-      <link rel="icon" type="image/x-icon" href="/favicon.png">
+      <link rel="icon" type="image/x-icon" href="./images/icon.jpg">
     
     <link rel="stylesheet" href="/css/uno.css">
     <link rel="stylesheet" href="/css/highlight.css">
@@ -81,10 +81,12 @@
 
   <div class="panel-main">
 
-  
+
     <div class="panel-main__inner panel-inverted">
     <div class="panel-main__content">
 
+        
+        <a href="/" title="link to homepage for 里士满路1285号"><img src="./images/profile.jpg" width="80" alt="里士满路1285号 logo" class="panel-cover__logo logo" /></a>
         
 
         <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">里士满路1285号</a></h1>
@@ -107,64 +109,16 @@
                 <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
               
                 
-                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+                <li class="navigation__item"><a href="/#about" title="" class="">关于</a></li>
               
                 
-                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+                <li class="navigation__item"><a href="/#archive" title="" class="">归档</a></li>
               
 
             </ul>
           </nav>
 
-          <!-- ----------------------------
-To add a new social icon simply duplicate one of the list items from below
-and change the class in the <i> tag to match the desired social network
-and then add your link to the <a>. Here is a full list of social network
-classes that you can use:
-
-    icon-social-500px
-    icon-social-behance
-    icon-social-delicious
-    icon-social-designer-news
-    icon-social-deviant-art
-    icon-social-digg
-    icon-social-dribbble
-    icon-social-facebook
-    icon-social-flickr
-    icon-social-forrst
-    icon-social-foursquare
-    icon-social-github
-    icon-social-google-plus
-    icon-social-hi5
-    icon-social-instagram
-    icon-social-lastfm
-    icon-social-linkedin
-    icon-social-medium
-    icon-social-myspace
-    icon-social-path
-    icon-social-pinterest
-    icon-social-rdio
-    icon-social-reddit
-    icon-social-skype
-    icon-social-spotify
-    icon-social-stack-overflow
-    icon-social-steam
-    icon-social-stumbleupon
-    icon-social-treehouse
-    icon-social-tumblr
-    icon-social-twitter
-    icon-social-vimeo
-    icon-social-xbox
-    icon-social-yelp
-    icon-social-youtube
-    icon-social-zerply
-    icon-mail
-
--------------------------------->
-
-<!-- add social info here -->
-
-
+          <partial('_partials/social') >
 
         </div>
 
@@ -175,6 +129,7 @@ classes that you can use:
     <div class="panel-cover--overlay"></div>
   </div>
 </header>
+
 
     <div class="content-wrapper">
         <div class="content-wrapper__inner entry">
@@ -278,7 +233,7 @@ classes that you can use:
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/scale.fix.js"></script>
-    
+
 
     
 
@@ -306,7 +261,12 @@ classes that you can use:
 
 
     
-    
+    <if ( theme.github_repo_widget) {>
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+<}>
+
     <!--kill ie6 -->
 <!--[if IE 6]>
   <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
