@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      STL Vector与List区别 | 里士满路1285号
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Zhongrui Li">
+    
+    
+
+    <meta name="description" content="vector为存储的对象分配一块连续的地址空间，因此对vector中的元素随机访问效率很高。在vecotor中插入或者删除某个元素，需要将现有元素进行复制，移动。如果vector中存储的对象很大，或者构造函数复杂，则在对现有元素进行拷贝时开销较大，因为拷贝对象要调用拷贝构造函数。对于简单的小对象，vector的效率优于list。vector在每次扩张容量的时候，将容量扩展2倍，这样对于小对象来说，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STL Vector与List区别 | 里士满路1285号">
+<meta property="og:url" content="http://yoursite.com/2015/07/12/stl-vector-n-list/index.html">
+<meta property="og:site_name" content="里士满路1285号">
+<meta property="og:description" content="vector为存储的对象分配一块连续的地址空间，因此对vector中的元素随机访问效率很高。在vecotor中插入或者删除某个元素，需要将现有元素进行复制，移动。如果vector中存储的对象很大，或者构造函数复杂，则在对现有元素进行拷贝时开销较大，因为拷贝对象要调用拷贝构造函数。对于简单的小对象，vector的效率优于list。vector在每次扩张容量的时候，将容量扩展2倍，这样对于小对象来说，">
+<meta property="og:updated_time" content="2016-06-24T03:45:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="STL Vector与List区别 | 里士满路1285号">
+<meta name="twitter:description" content="vector为存储的对象分配一块连续的地址空间，因此对vector中的元素随机访问效率很高。在vecotor中插入或者删除某个元素，需要将现有元素进行复制，移动。如果vector中存储的对象很大，或者构造函数复杂，则在对现有元素进行拷贝时开销较大，因为拷贝对象要调用拷贝构造函数。对于简单的小对象，vector的效率优于list。vector在每次扩张容量的时候，将容量扩展2倍，这样对于小对象来说，">
+
+    
+    
+      <link rel="icon" type="image/x-icon" href="./images/icon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 里士满路1285号"><img src="./images/profile.jpg" width="80" alt="里士满路1285号 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">里士满路1285号</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          在此虚度时光
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <partial('_partials/social') >
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">STL Vector与List区别</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2015-07-12" class="post-meta__date date">2015-07-12</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/C-C/">C/C++</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/C-C/">C/C++</a>, <a class="tags-link" href="/tags/STL/">STL</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>vector为存储的对象分配一块连续的地址空间，因此对vector中的元素随机访问效率很高。在vecotor中插入或者删除某个元素，需要将现有元素进行复制，移动。如果vector中存储的对象很大，或者构造函数复杂，则在对现有元素进行拷贝时开销较大，因为拷贝对象要调用拷贝构造函数。对于简单的小对象，vector的效率优于list。vector在每次扩张容量的时候，将容量扩展2倍，这样对于小对象来说，效率是很高的。</p>
+<pre><code>list中的对象是离散存储的，随机访问某个元素需要遍历list。在list中插入元素，尤其是在首尾插入元素，效率很高，只需要改变元素的指针。
+
+综上所述：
+
+vector适用：对象数量变化少，简单对象，随机访问元素频繁
+
+list适用：对象数量变化大，对象复杂，插入和删除频繁
+
+最大的区别是,list是双向的，而vector是单向的。
+
+因此在实际使用时，如何选择这三个容器中哪一个，应根据你的需要而定，一般应遵循下面的原则：
+
+1、如果你需要高效的随即存取，而不在乎插入和删除的效率，使用vector
+
+2、如果你需要大量的插入和删除，而不关心随即存取，则应使用list
+
+3、如果你需要随即存取，而且关心两端数据的插入和删除，则应使用deque。
+
+vector&amp;nbsp;&amp;nbsp; 表示一段连续的内存区域，每个元素被顺序存储在这段内存中，对vector&amp;nbsp;&amp;nbsp; 的随机访问效率很高，但对非末尾元素的插和删除则效率非常低。
+
+deque
+
+也表示一段连续的内存区域，但与vector不同的是它支持高效地在其首部插入和删除元素，它通过两级数组结构来实现，一级表示实际的容器，第二级指向容器的首和尾list&amp;nbsp;&amp;nbsp; 表示非连续的内存区域并通过一对指向首尾元素的指针双向链接起来，插入删除效率高，随机访问效率低
+
+2
+
+stl提供了三个最基本的容器：vector,list,deque。
+
+vector和built-in数组类似，它拥有一段连续的内存空间，并且起始地址不变，因此它能非常好的支持随即存取，即[]操作符，但由于它的内存空间是连续的，所以在中间进行插入和删除会造成内存块的拷贝，另外，当该数组后的内存空间不够时，需要重新申请一块足够大的内存并进行内存的拷贝。这些都大大影响了vector的效率。
+
+list就是数据结构中的双向链表(根据sgi &amp;nbsp; stl源代码)，因此它的内存空间可以是不连续的，通过指针来进行数据的访问，这个特点使得它的随即存取变的非常没有效率，因此它没有提供[]操作符的重载。但由于链表的特点，它可以以很好的效率支持任意地方的删除和插入。
+
+deque是一个double-ended &amp;nbsp; queue，它的具体实现不太清楚，但知道它具有以下两个特点：它支持[]操作符，也就是支持随即存取，并且和vector的效率相差无几，它支持在两端的操作：push_back,push_front,pop_back,pop_front等，并且在两端操作上list的效率也差不多。
+
+因此在实际使用时，如何选择这三个容器中哪一个，应根据你的需要而定，一般应遵循下面的原则：
+
+1、如果你需要高效的随即存取，而不在乎插入和删除的效率，使用vector
+
+2、如果你需要大量的插入和删除，而不关心随即存取，则应使用list
+
+3、如果你需要随即存取，而且关心两端数据的插入和删除，则应使用deque。
+</code></pre>
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    <if ( theme.github_repo_widget) {>
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+<}>
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

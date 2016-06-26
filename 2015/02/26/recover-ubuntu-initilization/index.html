@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      恢复Ubuntu启动项 | 里士满路1285号
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Zhongrui Li">
+    
+    
+
+    <meta name="description" content="使用ubuntu的启动盘，然后改系统从光盘启动，进入临时ubuntu系统，选择&amp;ldquo;试用ubuntu&amp;rdquo;。
+运行命令：sudo fdisk -l （这里不是数字1，是字母l），找到ubuntu所在分区。由于我的是装在G盘，所以显示为sda8。
+
+运行命令：sudo -i 进入到root用户，方便后面的操作。
+
+运行命令：mkdir /media/tmpdir 建立临时文件夹，然后">
+<meta property="og:type" content="article">
+<meta property="og:title" content="恢复Ubuntu启动项 | 里士满路1285号">
+<meta property="og:url" content="http://yoursite.com/2015/02/26/recover-ubuntu-initilization/index.html">
+<meta property="og:site_name" content="里士满路1285号">
+<meta property="og:description" content="使用ubuntu的启动盘，然后改系统从光盘启动，进入临时ubuntu系统，选择&amp;ldquo;试用ubuntu&amp;rdquo;。
+运行命令：sudo fdisk -l （这里不是数字1，是字母l），找到ubuntu所在分区。由于我的是装在G盘，所以显示为sda8。
+
+运行命令：sudo -i 进入到root用户，方便后面的操作。
+
+运行命令：mkdir /media/tmpdir 建立临时文件夹，然后">
+<meta property="og:updated_time" content="2016-06-24T03:45:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="恢复Ubuntu启动项 | 里士满路1285号">
+<meta name="twitter:description" content="使用ubuntu的启动盘，然后改系统从光盘启动，进入临时ubuntu系统，选择&amp;ldquo;试用ubuntu&amp;rdquo;。
+运行命令：sudo fdisk -l （这里不是数字1，是字母l），找到ubuntu所在分区。由于我的是装在G盘，所以显示为sda8。
+
+运行命令：sudo -i 进入到root用户，方便后面的操作。
+
+运行命令：mkdir /media/tmpdir 建立临时文件夹，然后">
+
+    
+    
+      <link rel="icon" type="image/x-icon" href="./images/icon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 里士满路1285号"><img src="./images/profile.jpg" width="80" alt="里士满路1285号 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">里士满路1285号</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          在此虚度时光
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <partial('_partials/social') >
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">恢复Ubuntu启动项</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2015-02-26" class="post-meta__date date">2015-02-26</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/Issues-Solution/">Issues Solution</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Ubuntu/">Ubuntu</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>使用ubuntu的启动盘，然后改系统从光盘启动，进入临时ubuntu系统，选择&ldquo;试用ubuntu&rdquo;。</p>
+<pre><code>运行命令：sudo fdisk -l （这里不是数字1，是字母l），找到ubuntu所在分区。由于我的是装在G盘，所以显示为sda8。
+
+运行命令：sudo -i 进入到root用户，方便后面的操作。
+
+运行命令：mkdir /media/tmpdir 建立临时文件夹，然后输入命令：mount&amp;nbsp; /dev/sda8&amp;nbsp; /media/tmpdir挂载系统。
+
+接下来输入命令: sudo grub-install&amp;nbsp; --root-directory=/media/tmpdir&amp;nbsp;&amp;nbsp; /dev/sda （注意，这里就是sda，后面不要写成sda8），如果显示no error report，则表示基本成功了。
+
+接下来，重启系统，不要进入[windows](http://www.2cto.com/os/windows/)，先进入ubuntu，在终端中输入命令：sudo update-grub2 更新grub后方成功完成，这时候就可以重启进入任意一个系统了。
+
+以上经过windows7和windows8系统测试都没有问题，最终很完美的解决了启动项问题
+</code></pre>
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    <if ( theme.github_repo_widget) {>
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+<}>
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

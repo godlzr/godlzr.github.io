@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      一览众山小：OpenCV 2.4.8组件结构全解析 | 里士满路1285号
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Zhongrui Li">
+    
+    
+
+    <meta name="description" content="# 
+    &amp;amp;nbsp;
+
+
+    &amp;lt;span style=&amp;quot;font-family: &amp;apos;Microsoft YaHei&amp;apos;;&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 16px;&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;color: rgb(51, 51, 255);&amp;quot;&amp;gt;本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一览众山小：OpenCV 2.4.8组件结构全解析 | 里士满路1285号">
+<meta property="og:url" content="http://yoursite.com/2015/08/07/opencv2-4-8-components/index.html">
+<meta property="og:site_name" content="里士满路1285号">
+<meta property="og:description" content="# 
+    &amp;amp;nbsp;
+
+
+    &amp;lt;span style=&amp;quot;font-family: &amp;apos;Microsoft YaHei&amp;apos;;&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 16px;&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;color: rgb(51, 51, 255);&amp;quot;&amp;gt;本">
+<meta property="og:updated_time" content="2016-06-24T03:45:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一览众山小：OpenCV 2.4.8组件结构全解析 | 里士满路1285号">
+<meta name="twitter:description" content="# 
+    &amp;amp;nbsp;
+
+
+    &amp;lt;span style=&amp;quot;font-family: &amp;apos;Microsoft YaHei&amp;apos;;&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 16px;&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;color: rgb(51, 51, 255);&amp;quot;&amp;gt;本">
+
+    
+    
+      <link rel="icon" type="image/x-icon" href="./images/icon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 里士满路1285号"><img src="./images/profile.jpg" width="80" alt="里士满路1285号 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">里士满路1285号</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          在此虚度时光
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <partial('_partials/social') >
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">一览众山小：OpenCV 2.4.8组件结构全解析</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2015-08-07" class="post-meta__date date">2015-08-07</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/OpenCV/">OpenCV</a>
+            </font>
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <blockquote>
+<p># </p>
+<pre><code>    &amp;nbsp;
+
+
+    &lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;span style=&quot;color: rgb(51, 51, 255);&quot;&gt;本系列文章由zhmxy555（毛星云）编写，转载请注明出处。&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(51, 51, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;
+
+
+    &lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;color: rgb(102, 0, 204);&quot;&gt;文章链接：&lt;/span&gt;[&amp;nbsp;](http://blog.csdn.net/poem_qianmo/article/details/19809337)[http://blog.csdn.net/poem_qianmo/article/details/19925819](http://blog.csdn.net/poem_qianmo/article/details/19925819)&lt;/span&gt;&lt;/span&gt;
+
+
+    &amp;nbsp;
+
+
+    &lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;color: rgb(0, 153, 0);&quot;&gt;作者：毛星云（浅墨）&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;邮箱：&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 153, 0);&quot;&gt;[happylifemxy@163.com](mailto:happylifemxy@163.com)&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+
+
+    &lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;white-space: pre; font-size: 16px;&quot;&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;写作当前博文时配套使用OpenCV版本：2.4.8&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+
+
+    &amp;nbsp;
+
+
+    &lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;之前啃了不少OpenCV的官方文档，发现如果了解了一些OpenCV整体的模块架构后，再重点学习自己感兴趣的部分的话，就会有一览众山小的感觉，于是，就决定写出这篇文章，作为启程OpenCV系列博文的第二篇。&lt;/span&gt;
+
+
+    &lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+    &lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;至于OpenCV组件结构的研究方法，我们不妨管中窥豹，通过opencv安装路径下include目录里面头文件的分类存放，来一窥OpenCV这些年迅猛发展起来的庞杂组件架构。&lt;/span&gt;
+
+
+    &lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;我们进入到D:\ProgramFiles\opencv\build\include目录，可以看到有opencv和opencv2这两个文件夹。显然，opencv这个文件夹里面包含着旧版的头文件。&lt;/span&gt;&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;而opencv2这个文件夹里面包含着具有时代意义的新版OpenCV2系列的头文件。&lt;/span&gt;
+
+
+    &amp;nbsp;
+
+
+    &lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;![](http://img.blog.csdn.net/20140225181139578?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcG9lbV9xaWFubW8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)&lt;/span&gt;
+
+
+    &lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;在opencv这个文件夹里面，也就是D:\Program Files\opencv\build\include\opencv目录下，可以看到如下的各种头文件。这里面大概就是opencv 1.0最核心的，而且保留下来的内容的头文件，可以把它们整体理解为一个组件。&lt;/span&gt;
+
+
+    &amp;nbsp;
+
+
+    &lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;![](http://img.blog.csdn.net/20140225181220281?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcG9lbV9xaWFubW8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)&lt;/span&gt;
+
+
+    &amp;nbsp;
+
+
+    &lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;再来看看我们重点关注的opencv2这边，&lt;/span&gt;&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;在D:\ProgramFiles\opencv\build\include\opencv2目录下，我们可以看到这些文件夹：&lt;/span&gt;
+
+
+    &lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;![](http://img.blog.csdn.net/20140225181302390?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcG9lbV9xaWFubW8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)&lt;/span&gt;
+
+
+    &amp;nbsp;
+
+
+    &amp;nbsp;
+
+
+    &amp;nbsp;
+
+
+    &lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;我们灵机一动，发现下面有个叫opencv_modules.hpp的hpp文件，一看就知道里面存放的是opencv2中的新模块构造相关的说明代码，打开一看，果不其然，定义的是OpenCV2所有组件的宏：&lt;/span&gt;
+
+
+    &amp;nbsp;
+
+
+&lt;div class=&quot;dp-highlighter bg_cpp&quot; style=&quot;font-family: Consolas, &apos;Courier New&apos;, Courier, mono, serif; font-size: 12px; width: 895.03125px; overflow: auto; padding-top: 1px; margin: 18px 0px !important; background-color: rgb(231, 229, 220);&quot;&gt;
+
+    &lt;div class=&quot;bar&quot; style=&quot;padding-left: 45px;&quot;&gt;
+
+        &lt;div class=&quot;tools&quot; style=&quot;padding: 3px 8px 10px 10px; font-stretch: normal; font-size: 9px; line-height: normal; font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; color: silver; border-left-width: 3px; border-left-style: solid; border-left-color: rgb(153, 153, 153); background-color: rgb(248, 248, 248);&quot;&gt;
+
+            **[cpp][/cpp]**&amp;nbsp;[view plain](http://blog.csdn.net/poem_qianmo/article/details/19925819# &quot;view plain&quot;)[copy](http://blog.csdn.net/poem_qianmo/article/details/19925819# &quot;copy&quot;)[![在CODE上查看代码片](https://code.csdn.net/assets/CODE_ico.png)](https://code.csdn.net/snippets/204804 &quot;在CODE上查看代码片&quot;)[![派生到我的代码片](https://code.csdn.net/assets/ico_fork.svg)](https://code.csdn.net/snippets/204804/fork &quot;派生到我的代码片&quot;)
+
+
+                &amp;nbsp;
+
+
+            &lt;div style=&quot;position: absolute; left: 467px; top: 1884px; width: 29px; height: 14px; z-index: 99;&quot;&gt;
+
+                &amp;nbsp;
+
+            &lt;/div&gt;
+
+
+                &amp;nbsp;
+
+
+        &lt;/div&gt;
+
+
+            &amp;nbsp;
+
+
+    &lt;/div&gt;
+</code></pre><ol>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="comment" style="margin: 0px; padding: 0px; border: none; color: rgb(0, 130, 0); background-color: inherit;">/*</span>&nbsp;</span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="comment" style="margin: 0px; padding: 0px; border: none; color: rgb(0, 130, 0); background-color: inherit;">&nbsp;<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>*&nbsp;File&nbsp;generated&nbsp;automatically,&nbsp;do&nbsp;not&nbsp;modify&nbsp;</em></em></span>&nbsp;</span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="comment" style="margin: 0px; padding: 0px; border: none; color: rgb(0, 130, 0); background-color: inherit;">&nbsp;*</span>&nbsp;</span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="comment" style="margin: 0px; padding: 0px; border: none; color: rgb(0, 130, 0); background-color: inherit;">&nbsp;*This&nbsp;file&nbsp;defines&nbsp;the&nbsp;list&nbsp;of&nbsp;modules&nbsp;available&nbsp;in&nbsp;current&nbsp;build&nbsp;configuration</span>&nbsp;</span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="comment" style="margin: 0px; padding: 0px; border: none; color: rgb(0, 130, 0); background-color: inherit;">&nbsp;*</span>&nbsp;</span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="comment" style="margin: 0px; padding: 0px; border: none; color: rgb(0, 130, 0); background-color: inherit;">&nbsp;*</span>&nbsp;</span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="comment" style="margin: 0px; padding: 0px; border: none; color: rgb(0, 130, 0); background-color: inherit;">*/</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&nbsp;&nbsp;&nbsp;</span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_CALIB3D</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_CONTRIB</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_CORE</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_FEATURES2D</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_FLANN</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_GPU</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_HIGHGUI</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_IMGPROC</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_LEGACY</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_ML</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_NONFREE</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_OBJDETECT</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_OCL</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_PHOTO</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_STITCHING</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_SUPERRES</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_TS</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_VIDEO</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+</li>
+<li><p><span style="margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;"><span class="preprocessor" style="margin: 0px; padding: 0px; border: none; color: gray; background-color: inherit;">#define&nbsp;HAVE_OPENCV_VIDEOSTAB</span><span style="margin: 0px; padding: 0px; border: none; background-color: inherit;">&nbsp;&nbsp;</span></span></p>
+<p></p>
+</li>
+</ol>
+<pre><code>&amp;nbsp;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;OK，就不多客套了，下面就是OpenCV的所有模块介绍，按照顺序来：&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(204, 0, 0);&quot;&gt;【calib3d】&lt;/span&gt;&amp;mdash;&amp;mdash;其实就是就是Calibration（校准）加3D这两个词的组合缩写。这个模块主要是相机校准和三维重建相关的内容。基本的多视角几何算法，单个立体摄像头标定，物体姿态估计，立体相似性算法，3D信息的重建等等。&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(0, 153, 0);&quot;&gt;【contrib】&lt;/span&gt;&amp;mdash;&amp;mdash;也就是Contributed/Experimental Stuf的缩写， 该模块包含了一些最近添加的不太稳定的可选功能，不用去多管。2.4.8里的这个模块有新型人脸识别，&lt;/span&gt;&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;; color: rgb(49, 49, 49);&quot;&gt;立体匹配&lt;/span&gt;&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;，人工视网膜模型等技术。&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(255, 102, 0);&quot;&gt;【core】&lt;/span&gt;&amp;mdash;&amp;mdash;核心功能模块，包含如下内容：&lt;/span&gt;
+</code></pre><blockquote>
+<blockquote>
+<p># </p>
+<pre><code>&lt;a name=&quot;t2&quot; style=&quot;color: rgb(202, 0, 0);&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;
+
+
+&amp;nbsp;
+
+
+&amp;nbsp;
+</code></pre><ul>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">OpenCV基本数据结构</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">动态数据结构</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">绘图函数</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">数组操作相关函数</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">辅助功能与系统函数和宏</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">与OpenGL的互操作</span></span></p>
+</li>
+</ul>
+<pre><code>&amp;nbsp;
+</code></pre></blockquote>
+</blockquote>
+<p># </p>
+<pre><code>&lt;a name=&quot;t3&quot; style=&quot;color: rgb(202, 0, 0);&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;
+
+
+&amp;nbsp;
+
+
+&amp;nbsp;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;; font-size: 18px; color: rgb(153, 51, 153);&quot;&gt;&amp;nbsp;【imgproc&lt;/span&gt;&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(153, 51, 153);&quot;&gt;】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;mdash;&amp;mdash;Image和Processing这两个单词的缩写组合。图像处理模块，这个模块包含了如下内容：&lt;/span&gt;&lt;/span&gt;
+</code></pre><blockquote>
+<blockquote>
+<p># </p>
+<pre><code>&lt;a name=&quot;t4&quot; style=&quot;color: rgb(202, 0, 0);&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;
+
+
+&amp;nbsp;
+
+
+&amp;nbsp;
+</code></pre><ul>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">线性和非线性的图像滤波</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">图像的几何变换</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">其它（Miscellaneous）图像转换</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">直方图相关</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">结构分析和形状描述</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">运动分析和对象跟踪</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">特征检测</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">目标检测等内容</span></span></p>
+</li>
+</ul>
+<pre><code>&amp;nbsp;
+</code></pre></blockquote>
+</blockquote>
+<p># </p>
+<pre><code>&lt;a name=&quot;t5&quot; style=&quot;color: rgb(202, 0, 0);&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;
+
+
+&amp;nbsp;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(51, 51, 255);&quot;&gt;【features2d】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;nbsp;&amp;mdash;&amp;mdash;也就是Features2D， 2D功能框架 ，包含如下内容：&lt;/span&gt;&lt;/span&gt;
+</code></pre><blockquote>
+<blockquote>
+<ul>
+<li><p><span style="font-family: 'Microsoft YaHei';"><strong>特征检测和描述</strong></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><strong>特征检测器（Feature Detectors）通用接口</strong></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><strong>描述符提取器（Descriptor Extractors）通用接口</strong></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><strong>描述符匹配器（Descriptor Matchers）通用接口</strong></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><strong>通用描述符（Generic Descriptor）匹配器通用接口</strong></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><strong>关键点绘制函数和匹配功能绘制函数</strong></span></p>
+</li>
+</ul>
+<blockquote>
+<blockquote>
+<p># </p>
+<pre><code>&lt;a name=&quot;t6&quot; style=&quot;color: rgb(202, 0, 0);&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;
+
+
+&amp;nbsp;
+
+
+&amp;nbsp;
+</code></pre></blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p># </p>
+<pre><code>&lt;a name=&quot;t7&quot; style=&quot;color: rgb(202, 0, 0);&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(255, 102, 102);&quot;&gt;【flann】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;mdash;&amp;mdash;&amp;nbsp;Fast Library for Approximate Nearest Neighbors，高维的近似近邻快速搜索算法库，&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;包含两个部分：&lt;/span&gt;
+</code></pre><blockquote>
+<blockquote>
+<p># </p>
+<pre><code>&lt;a name=&quot;t8&quot; style=&quot;color: rgb(202, 0, 0);&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;
+
+
+&amp;nbsp;
+
+
+&amp;nbsp;
+</code></pre><ul>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">快速近似最近邻搜索</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">聚类</span></span></p>
+</li>
+</ul>
+<pre><code>&amp;nbsp;
+</code></pre><p># </p>
+<pre><code>&lt;a name=&quot;t9&quot; style=&quot;color: rgb(202, 0, 0);&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;
+
+
+&amp;nbsp;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+</code></pre></blockquote>
+</blockquote>
+<p># </p>
+<pre><code>&amp;nbsp;
+
+
+&amp;nbsp;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(153, 102, 51);&quot;&gt;【gpu】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;mdash;&amp;mdash;运用GPU加速的计算机视觉模块&lt;/span&gt;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(51, 102, 255);&quot;&gt;【highgui】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;mdash;&amp;mdash;也就是high gui，高层GUI图形用户界面，包含媒体的I / O输入输出，&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;; font-size: 14px;&quot;&gt;视频捕捉、图像和视频的编码解码、图形交互界面的接口等内容&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(255, 0, 0);&quot;&gt;【legacy】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;mdash;&amp;mdash;一些已经废弃的代码库，保留下来作为向下兼容，包含如下相关的内容：&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;; font-size: 14px;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+</code></pre><blockquote>
+<blockquote>
+<ul>
+<li><p><span style="font-family: 'Microsoft YaHei';"><strong>运动分析</strong></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><strong>期望最大化</strong></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><strong>直方图</strong></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><strong>平面细分（C API）</strong></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><strong>特征检测和描述（Feature Detection and Description）</strong></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><strong>描述符提取器（Descriptor Extractors）的通用接口</strong></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><strong>通用描述符（Generic Descriptor Matchers）的常用接口</strong></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><strong>匹配器</strong></span></p>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+<p># </p>
+<pre><code>&lt;a name=&quot;t11&quot; style=&quot;color: rgb(202, 0, 0);&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;
+
+
+&amp;nbsp;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(204, 0, 0);&quot;&gt;【ml】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;mdash;&amp;mdash;Machine Learning，机器学习模块，&amp;nbsp;基本上是统计模型和分类算法，包含如下内容：&lt;/span&gt;&lt;/span&gt;
+</code></pre><blockquote>
+<blockquote>
+<p># </p>
+<pre><code>&amp;nbsp;
+
+
+&amp;nbsp;
+
+
+&amp;nbsp;
+</code></pre><ul>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">统计模型 （Statistical Models）</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">一般贝叶斯分类器 （Normal Bayes Classifier）</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">K-近邻 （K-NearestNeighbors）</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">支持向量机 （Support Vector Machines）</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">决策树 （Decision Trees）</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">提升（Boosting）</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">梯度提高树（Gradient Boosted Trees）</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">随机树 （Random Trees）</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">超随机树 （Extremely randomized trees）</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">期望最大化 （Expectation Maximization）</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">神经网络 （Neural Networks）</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">MLData</span></span></p>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+<p># </p>
+<pre><code>&amp;nbsp;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(204, 0, 0);&quot;&gt;【nonfree】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;，也就是一些具有专利的算法模块 ，包含特征检测和GPU相关的内容。最好不要商用，可能会被告哦。&lt;/span&gt;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(102, 51, 255);&quot;&gt;【objdetect】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;mdash;&amp;mdash;目标检测模块，包含Cascade Classification（级联分类）和Latent SVM这两个部分。&lt;/span&gt;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(51, 204, 0);&quot;&gt;【ocl】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;mdash;&amp;mdash;即OpenCL-accelerated Computer Vision，运用OpenCL加速的计算机视觉组件模块&lt;/span&gt;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(255, 102, 0);&quot;&gt;【photo】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;mdash;&amp;mdash;也就是Computational Photography，包含图像修复和图像去噪两部分&lt;/span&gt;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(0, 204, 204);&quot;&gt;【stitching】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;mdash;&amp;mdash;images stitching，图像拼接模块，包含如下部分：&lt;/span&gt;&lt;/span&gt;
+</code></pre><blockquote>
+<blockquote>
+<p># </p>
+<pre><code>&lt;a name=&quot;t14&quot; style=&quot;color: rgb(202, 0, 0);&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;
+
+
+&amp;nbsp;
+
+
+&amp;nbsp;
+</code></pre><ul>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">拼接流水线</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">特点寻找和匹配图像</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">估计旋转</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">自动校准</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">图片歪斜</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">接缝估测</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">曝光补偿</span></span></p>
+</li>
+<li><p><span style="font-family: 'Microsoft YaHei';"><span style="font-size: 14px;">图片混合</span></span></p>
+</li>
+</ul>
+<pre><code>&amp;nbsp;
+</code></pre></blockquote>
+</blockquote>
+<p># </p>
+<pre><code>&amp;nbsp;
+
+
+&amp;nbsp;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(51, 204, 0);&quot;&gt;【superres】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;mdash;&amp;mdash;SuperResolution，超分辨率技术的相关功能模块&lt;/span&gt;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(255, 102, 0);&quot;&gt;【ts】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;mdash;&amp;mdash;opencv测试相关代码，不用去管他&lt;/span&gt;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(102, 0, 204);&quot;&gt;【video】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;mdash;&amp;mdash;视频分析组件，&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;; font-size: 14px;&quot;&gt;该模块包括运动估计，背景分离，对象跟踪等视频处理相关内容。&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(204, 0, 0);&quot;&gt;【Videostab】&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;mdash;&amp;mdash;Video stabilization，视频稳定相关的组件，官方文档中没有多作介绍，不管它了。&lt;/span&gt;&lt;/span&gt;
+
+
+&amp;nbsp;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;&amp;nbsp;&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;看到到这里，相信大家已经对OpenCV的模块架构设计有了一定的认识。&lt;/span&gt;
+
+
+&lt;span style=&quot;font-family: &apos;Microsoft YaHei&apos;;&quot;&gt;OpenCV其实就是这么多模块作为代码容器组合起来的一个SDK而已，没什么稀奇的，对吧。&lt;/span&gt;
+</code></pre></blockquote>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    <if ( theme.github_repo_widget) {>
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+<}>
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

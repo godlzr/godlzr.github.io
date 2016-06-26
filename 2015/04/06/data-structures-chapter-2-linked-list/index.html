@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Data Structures----Chapter 2 Linked List | 里士满路1285号
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Zhongrui Li">
+    
+    
+
+    <meta name="description" content="2.1 Write code to remove duplicates from an unsorted linked list.FOLLOW UPHow would you solve this problem if a temporary buffer is now allowed?
+如果可以使用临时区域，我们使用hash表来判断元素是否重复
+如果不使用临时区域，我们用两个指针，从前向后依次遍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data Structures----Chapter 2 Linked List | 里士满路1285号">
+<meta property="og:url" content="http://yoursite.com/2015/04/06/data-structures-chapter-2-linked-list/index.html">
+<meta property="og:site_name" content="里士满路1285号">
+<meta property="og:description" content="2.1 Write code to remove duplicates from an unsorted linked list.FOLLOW UPHow would you solve this problem if a temporary buffer is now allowed?
+如果可以使用临时区域，我们使用hash表来判断元素是否重复
+如果不使用临时区域，我们用两个指针，从前向后依次遍">
+<meta property="og:updated_time" content="2016-06-24T03:45:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Data Structures----Chapter 2 Linked List | 里士满路1285号">
+<meta name="twitter:description" content="2.1 Write code to remove duplicates from an unsorted linked list.FOLLOW UPHow would you solve this problem if a temporary buffer is now allowed?
+如果可以使用临时区域，我们使用hash表来判断元素是否重复
+如果不使用临时区域，我们用两个指针，从前向后依次遍">
+
+    
+    
+      <link rel="icon" type="image/x-icon" href="./images/icon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 里士满路1285号"><img src="./images/profile.jpg" width="80" alt="里士满路1285号 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">里士满路1285号</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          在此虚度时光
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <partial('_partials/social') >
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Data Structures----Chapter 2 Linked List</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2015-04-06" class="post-meta__date date">2015-04-06</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/Cracking-the-Coding-Interview-Fifth-edition/">Cracking the Coding Interview (Fifth edition)</a>
+            </font>
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h6 id="2-1-Write-code-to-remove-duplicates-from-an-unsorted-linked-list"><a href="#2-1-Write-code-to-remove-duplicates-from-an-unsorted-linked-list" class="headerlink" title="2.1 Write code to remove duplicates from an unsorted linked list."></a>2.1 Write code to remove duplicates from an unsorted linked list.</h6><h6 id="FOLLOW-UP"><a href="#FOLLOW-UP" class="headerlink" title="FOLLOW UP"></a>FOLLOW UP</h6><h6 id="How-would-you-solve-this-problem-if-a-temporary-buffer-is-now-allowed"><a href="#How-would-you-solve-this-problem-if-a-temporary-buffer-is-now-allowed" class="headerlink" title="How would you solve this problem if a temporary buffer is now allowed?"></a>How would you solve this problem if a temporary buffer is now allowed?</h6><ul>
+<li>如果可以使用临时区域，我们使用hash表来判断元素是否重复</li>
+<li>如果不使用临时区域，我们用两个指针，从前向后依次遍历判断是否有后继节点与之前的节点相同</li>
+<li><a href="https://github.com/godlzr/CrackingCodingInterview/blob/master/src/com/DataStructures/LinkedList/linkedListHelper.java" target="_blank" rel="external">Q2.1_Implementation</a></li>
+</ul>
+<h6 id="2-2-Implement-an-algorithm-to-find-the-kth-to-last-element-of-a-singly-linked-list"><a href="#2-2-Implement-an-algorithm-to-find-the-kth-to-last-element-of-a-singly-linked-list" class="headerlink" title="2.2 Implement an algorithm to find the kth to last element of a singly linked list."></a>2.2 Implement an algorithm to find the kth to last element of a singly linked list.</h6><ul>
+<li>在单链表中找到倒数第k个元素</li>
+<li>如果链表的长度已知， 则倒数k个元素即正数（length-k），这种情况太简单，明显不是要考察的</li>
+<li>一种方法是使用递归，依次遍历到最后一个元素，然后向前递归查找第k个,需要一个全局变量来计数</li>
+<li>另种方法是双指针，两个指针差k位，同时向后移动至后指针指到最后一个元素，返回前指针指向的元素即可</li>
+<li><a href="https://github.com/godlzr/CrackingCodingInterview/blob/master/src/com/DataStructures/LinkedList/linkedListHelper.java" target="_blank" rel="external">Q2.2_Implementation</a></li>
+</ul>
+<h6 id="2-3-Implement-an-algorithm-to-delete-a-node-in-the-middle-of-a-singly-linked-list-given-only-access-to-that-node"><a href="#2-3-Implement-an-algorithm-to-delete-a-node-in-the-middle-of-a-singly-linked-list-given-only-access-to-that-node" class="headerlink" title="2.3 Implement an algorithm to delete a node in the middle of a singly linked list, given only access to that node."></a>2.3 Implement an algorithm to delete a node in the middle of a singly linked list, given only access to that node.</h6><h6 id="EXAMPLE"><a href="#EXAMPLE" class="headerlink" title="EXAMPLE"></a>EXAMPLE</h6><h6 id="Input-the-node-c-from-the-linked-list-a-gt-b-gt-c-gt-d-gt-e"><a href="#Input-the-node-c-from-the-linked-list-a-gt-b-gt-c-gt-d-gt-e" class="headerlink" title="Input: the node c from the linked list a-&gt;b-&gt;c-&gt;d-&gt;e"></a>Input: the node c from the linked list a-&gt;b-&gt;c-&gt;d-&gt;e</h6><h6 id="Result-nothing-is-returned-but-the-new-linked-list-looks-like-a-gt-b-gt-d-gt-e"><a href="#Result-nothing-is-returned-but-the-new-linked-list-looks-like-a-gt-b-gt-d-gt-e" class="headerlink" title="Result: nothing is returned, but the new linked list looks like a-&gt;b-&gt;d-&gt;e"></a>Result: nothing is returned, but the new linked list looks like a-&gt;b-&gt;d-&gt;e</h6><ul>
+<li>middle指的是中间的某个不是正中间</li>
+<li>需要考虑4种情况即，A: c为头节点，B: c 为中间节点， C: c为尾节点，D: c为null</li>
+<li>情况C比较特殊，因为你无法删除c，可以增加标志位，不打印c，来处理这种情况</li>
+<li><a href="https://github.com/godlzr/CrackingCodingInterview/blob/master/src/com/DataStructures/LinkedList/linkedListHelper.java" target="_blank" rel="external">Q2.3_Implementation</a></li>
+</ul>
+<h6 id="2-4-Write-code-to-partition-a-linked-list-around-a-value-x-such-that-all-nodes-less-than-x-come-before-all-node-greater-than-or-equal-to-x"><a href="#2-4-Write-code-to-partition-a-linked-list-around-a-value-x-such-that-all-nodes-less-than-x-come-before-all-node-greater-than-or-equal-to-x" class="headerlink" title="2.4 Write code to partition a linked list around a value x, such that all nodes less than x come before all node greater than or equal to x."></a>2.4 Write code to partition a linked list around a value x, such that all nodes less than x come before all node greater than or equal to x.</h6><ul>
+<li>不要求排序</li>
+<li>建立两个链表，一个大于x，一个小于x</li>
+<li>遍历链表，将元素加入这两个链表，然后将其拼接</li>
+<li><a href="https://github.com/godlzr/CrackingCodingInterview/blob/master/src/com/DataStructures/LinkedList/linkedListHelper.java" target="_blank" rel="external">Q2.4_Implementation</a></li>
+</ul>
+<h6 id="2-5-You-have-tow-numbers-represented-by-a-linked-list-where-each-node-contains-a-single-digit-The-digits-are-stored-in-reverse-order-such-that-the-1’s-digit-is-at-the-head-of-the-list-Write-a-function-that-adds-the-two-numbers-and-returns-the-sum-as-a-linked-list"><a href="#2-5-You-have-tow-numbers-represented-by-a-linked-list-where-each-node-contains-a-single-digit-The-digits-are-stored-in-reverse-order-such-that-the-1’s-digit-is-at-the-head-of-the-list-Write-a-function-that-adds-the-two-numbers-and-returns-the-sum-as-a-linked-list" class="headerlink" title="2.5 You have tow numbers represented by a linked list, where each node contains a single digit. The digits are stored in reverse order, such that the 1’s digit is at the head of the list, Write a function that adds the two numbers and returns the sum as a linked list."></a>2.5 You have tow numbers represented by a linked list, where each node contains a single digit. The digits are stored in reverse order, such that the 1’s digit is at the head of the list, Write a function that adds the two numbers and returns the sum as a linked list.</h6><h6 id="EXAMPLE-1"><a href="#EXAMPLE-1" class="headerlink" title="EXAMPLE"></a>EXAMPLE</h6><h6 id="Input-7-gt-1-gt-6-5-gt-9-gt-2-That-is-617-295"><a href="#Input-7-gt-1-gt-6-5-gt-9-gt-2-That-is-617-295" class="headerlink" title="Input: (7-&gt;1-&gt;6) + (5-&gt;9-&gt;2). That is, 617+ 295."></a>Input: (7-&gt;1-&gt;6) + (5-&gt;9-&gt;2). That is, 617+ 295.</h6><h6 id="Ouput-2-gt-1-gt-9-That-is-912"><a href="#Ouput-2-gt-1-gt-9-That-is-912" class="headerlink" title="Ouput: 2-&gt;1-&gt;9. That is, 912."></a>Ouput: 2-&gt;1-&gt;9. That is, 912.</h6><h6 id="FOLLOW-UP-1"><a href="#FOLLOW-UP-1" class="headerlink" title="FOLLOW UP"></a>FOLLOW UP</h6><h6 id="Suppose-the-digits-are-stored-in-forward-order-Repeat-the-above-problem"><a href="#Suppose-the-digits-are-stored-in-forward-order-Repeat-the-above-problem" class="headerlink" title="Suppose the digits are stored in forward order. Repeat the above problem."></a>Suppose the digits are stored in forward order. Repeat the above problem.</h6><h6 id="EXAMPLE-2"><a href="#EXAMPLE-2" class="headerlink" title="EXAMPLE"></a>EXAMPLE</h6><h6 id="Input-6-gt-1-gt-7-2-gt-9-gt-5-That-is-617-295"><a href="#Input-6-gt-1-gt-7-2-gt-9-gt-5-That-is-617-295" class="headerlink" title="Input: (6-&gt;1-&gt;7) + (2-&gt;9-&gt;5). That is, 617 + 295."></a>Input: (6-&gt;1-&gt;7) + (2-&gt;9-&gt;5). That is, 617 + 295.</h6><h6 id="Output-9-gt-1-gt-2-That-is-912"><a href="#Output-9-gt-1-gt-2-That-is-912" class="headerlink" title="Output: 9-&gt;1-&gt;2. That is, 912."></a>Output: 9-&gt;1-&gt;2. That is, 912.</h6><ul>
+<li>答案给的是使用递归，建立新链表，按位相加。</li>
+<li>我自己写的是，先按位相加得到和，然后根据和构造sum链表</li>
+<li><a href="https://github.com/godlzr/CrackingCodingInterview/blob/master/src/com/DataStructures/LinkedList/linkedListHelper.java" target="_blank" rel="external">Q2.5_Implementation</a></li>
+</ul>
+<h6 id="2-6-Given-a-circular-linked-list-implement-an-algorithm-which-returns-the-node-at-the-beginning-of-the-loop"><a href="#2-6-Given-a-circular-linked-list-implement-an-algorithm-which-returns-the-node-at-the-beginning-of-the-loop" class="headerlink" title="2.6 Given a circular linked list, implement an algorithm which returns the node at the beginning of the loop."></a>2.6 Given a circular linked list, implement an algorithm which returns the node at the beginning of the loop.</h6><h6 id="DEFINITION"><a href="#DEFINITION" class="headerlink" title="DEFINITION"></a>DEFINITION</h6><h6 id="Circular-linked-list-A-corrupt-linked-list-in-which-a-node’s-next-pointer-points-to-an-earlier-node-so-as-to-make-a-loop-in-the-linked-list"><a href="#Circular-linked-list-A-corrupt-linked-list-in-which-a-node’s-next-pointer-points-to-an-earlier-node-so-as-to-make-a-loop-in-the-linked-list" class="headerlink" title="Circular linked list: A (corrupt) linked list in which a node’s next pointer points to an earlier node, so as to make a loop in the linked list."></a>Circular linked list: A (corrupt) linked list in which a node’s next pointer points to an earlier node, so as to make a loop in the linked list.</h6><h6 id="EXAMPLE-3"><a href="#EXAMPLE-3" class="headerlink" title="EXAMPLE"></a>EXAMPLE</h6><h6 id="Input-A-gt-B-gt-C-gt-D-gt-E-gt-C-the-same-C-as-earlier"><a href="#Input-A-gt-B-gt-C-gt-D-gt-E-gt-C-the-same-C-as-earlier" class="headerlink" title="Input: A-&gt;B-&gt;C-&gt;D-&gt;E-&gt;C [the same C as earlier]"></a>Input: A-&gt;B-&gt;C-&gt;D-&gt;E-&gt;C [the same C as earlier]</h6><h6 id="Output-C"><a href="#Output-C" class="headerlink" title="Output: C"></a>Output: C</h6><ul>
+<li>最简单的思路是使用hashmap，将元素一个个存入判断是否已存在</li>
+<li>返回第一个重复的元素，即环入口</li>
+<li><p><a href="https://github.com/godlzr/CrackingCodingInterview/blob/master/src/com/DataStructures/LinkedList/linkedListHelper.java" target="_blank" rel="external">Q2.6_Implementation</a>.<br>2.7 implement a function to check if a linked list is palindrome.</p>
+</li>
+<li><p>思路是比较前一半的元素和后一半的元素</p>
+</li>
+<li>可以使用栈，将前一半的元素压栈，然后和后一半的逐个比较。</li>
+<li>需要注意的是元素的个数是可能是奇数，加一个判断，为奇数就跳过中间的元素。</li>
+<li><a href="https://github.com/godlzr/CrackingCodingInterview/blob/master/src/com/DataStructures/LinkedList/linkedListHelper.java" target="_blank" rel="external">Q2.7_Implementation</a></li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    <if ( theme.github_repo_widget) {>
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+<}>
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

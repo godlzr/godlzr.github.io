@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      OpenGL and OpenGL ES | 里士满路1285号
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Zhongrui Li">
+    
+    
+
+    <meta name="description" content="OpenGL (Open Graphics Library) is a cross-language, multi-platform application programming interface(API) for rendering 2D and 3D vector graphics. The API is typically used to interact with a graphics">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenGL and OpenGL ES | 里士满路1285号">
+<meta property="og:url" content="http://yoursite.com/2015/07/20/opengl-and-opengl-es/index.html">
+<meta property="og:site_name" content="里士满路1285号">
+<meta property="og:description" content="OpenGL (Open Graphics Library) is a cross-language, multi-platform application programming interface(API) for rendering 2D and 3D vector graphics. The API is typically used to interact with a graphics">
+<meta property="og:updated_time" content="2016-06-24T03:45:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenGL and OpenGL ES | 里士满路1285号">
+<meta name="twitter:description" content="OpenGL (Open Graphics Library) is a cross-language, multi-platform application programming interface(API) for rendering 2D and 3D vector graphics. The API is typically used to interact with a graphics">
+
+    
+    
+      <link rel="icon" type="image/x-icon" href="./images/icon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 里士满路1285号"><img src="./images/profile.jpg" width="80" alt="里士满路1285号 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">里士满路1285号</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          在此虚度时光
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <partial('_partials/social') >
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">OpenGL and OpenGL ES</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2015-07-20" class="post-meta__date date">2015-07-20</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/OpenGL/">OpenGL</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/OpenGL/">OpenGL</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p><strong>OpenGL</strong> (<strong>Open Graphics Library</strong>)<span style="font-size:10px;"> </span>is a cross-language, multi-platform application programming interface(API) for rendering 2D and 3D vector graphics. The API is typically used to interact with a graphics processing unit(GPU), to achieve hardware-accelerated rendering. It is widely used in CAD, scientific visualization,  virtual reality, flight simulation, video game. Lastest version 4.5. It’s a common accepted industry standard and most driver for pc graphics cards have OpenGL implementation.</p>
+<p>OpenGL consists of three libraries GL, GLU,glx/wgl/agl</p>
+<ul>
+<li>GL: geometric primitive operations. Texturing/Image primitive operations. Set states of OpenGL state machine.</li>
+<li>GLU: Higher-level utility functions for NURBS, tessellators, quadric shapes etc.</li>
+<li>GLX/WGL/AGL: connects OpenGL and the windowing system of the OS.</li>
+<li>GLUT: OpenGL utility toolkit is a simple platform-independent GUI and is contained in the lib glut.<br><strong>OpenGL ES (OpenGL for Embedded System) </strong>is a subset<span style="font-size:10px;"> </span>of the OpenGL computer graphics rendering API(application programming interface) for rendering 2D and 3D computer graphics such as those used by video games, typically hardware-accelerated using a GPU(graphics processing unit). It is designed for embedded systems like smartphones, computer tablets, video game consoles and PDAs.</li>
+</ul>
+<p>The API is cross-language and multi-platform. The libraries GLUT and GLU are not available for OpenGL ES. Lastest version 3.1<sup id="cite_ref-3" class="reference"></sup></p>
+<p><strong>Difference between OpenGL and OpenGL ES</strong></p>
+<p>OpenGL ES 1.1 and OpenGL ES 2.0 are subsets of the full OpenGL standard. When using the OpenGL ES API, there are limitations that you must be aware of when developing your applications. For example, the following OpenGL functionality is not present in either OpenGL ES 1.1 or OpenGL ES 2.0:</p>
+<ul>
+<li>There is no support for <code>glBegin</code> or <code>glEnd</code>. Use vertex arrays and vertex buffer objects instead.</li>
+<li>The only supported rasterization primitives are points, lines and triangles. Quads are not supported.</li>
+<li>There is no polynomial function evaluation stage.</li>
+<li>You cannot send blocks of fragments directly to individual fragment operations.</li>
+<li><p>There is no support for display lists.<br>In addition, the following OpenGL functionality is not present in OpenGL ES 2.0:</p>
+</li>
+<li><p>There is no support for the fixed-function graphics pipeline. You must use your own vertex and fragment shader programs.</p>
+</li>
+<li>There is no support for viewing transforms such as <code>glFrustumf</code>. You must compute your own transformation matrix, pass it to the vertex shader as a uniform variable, and perform the matrix multiplication in the shader.</li>
+<li>There is no support for specialized functions such as <code>glVertexPointer</code> and <code>glNormalPointer</code>. Use <code>glVertexAttribPointer</code>instead.</li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    <if ( theme.github_repo_widget) {>
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+<}>
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

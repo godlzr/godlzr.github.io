@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      基于物理渲染的基础理论 | 里士满路1285号
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Zhongrui Li">
+    
+    
+
+    <meta name="description" content="#    基于物理渲染的基础理论
+---翻译自[Basic Theory of Physically-Based Rendering](https://www.marmoset.co/toolbag/learn/pbr-theory)&amp;amp;nbsp;By&amp;amp;nbsp;[Jeff Russell](https://twitter.com/j3ffdr)
+
+---【译】李仲锐
+
+Physci">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于物理渲染的基础理论 | 里士满路1285号">
+<meta property="og:url" content="http://yoursite.com/2016/06/23/e5-9f-ba-e4-ba-8e-e7-89-a9-e7-90-86-e6-b8-b2-e6-9f-93-e7-9a-84-e5-9f-ba-e7-a1-80-e7-90-86-e8-ae-ba/index.html">
+<meta property="og:site_name" content="里士满路1285号">
+<meta property="og:description" content="#    基于物理渲染的基础理论
+---翻译自[Basic Theory of Physically-Based Rendering](https://www.marmoset.co/toolbag/learn/pbr-theory)&amp;amp;nbsp;By&amp;amp;nbsp;[Jeff Russell](https://twitter.com/j3ffdr)
+
+---【译】李仲锐
+
+Physci">
+<meta property="og:updated_time" content="2016-06-24T03:45:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于物理渲染的基础理论 | 里士满路1285号">
+<meta name="twitter:description" content="#    基于物理渲染的基础理论
+---翻译自[Basic Theory of Physically-Based Rendering](https://www.marmoset.co/toolbag/learn/pbr-theory)&amp;amp;nbsp;By&amp;amp;nbsp;[Jeff Russell](https://twitter.com/j3ffdr)
+
+---【译】李仲锐
+
+Physci">
+
+    
+    
+      <link rel="icon" type="image/x-icon" href="./images/icon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 里士满路1285号"><img src="./images/profile.jpg" width="80" alt="里士满路1285号 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">里士满路1285号</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          在此虚度时光
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <partial('_partials/social') >
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">基于物理渲染的基础理论</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-06-23" class="post-meta__date date">2016-06-23</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/Computer-Vision-Graphics/">Computer Vision/Graphics</a>
+            </font>
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>#<br>    基于物理渲染的基础理论</p>
+<pre><code>---翻译自[Basic Theory of Physically-Based Rendering](https://www.marmoset.co/toolbag/learn/pbr-theory)&amp;nbsp;By&amp;nbsp;[Jeff Russell](https://twitter.com/j3ffdr)
+
+---【译】李仲锐
+
+Physcially-based Rendering（PBR）基于物理渲染是令人兴奋的技术，因为缺少定义，近年来倾向于用实时渲染（Real-time Rendering）来指代。这项技术中杂糅了很多概念，所以经常让人困惑它的真实含义是什么。最简短的回答是：&amp;ldquo;许多事物&amp;rdquo;，和&amp;ldquo;它有关于&amp;rdquo; ，这个回答显然不令人满意，所以我尝试用我的方法来在一定程度上解释PBR代表的含义和它有别于其他渲染方法的地方。这篇文章是为了那些非工程出身的读者，主要是艺术工作者而写的，其中不包含任何的数学知识与计算机代码。
+
+基于物理的着色（shading）系统与以往技术的最大不同在于对光线与物体表面行为属性的关注。一些以往的方法的着色能力已经足够先进，使那些近似而不精确的视觉效果可以被忽略，这些方法已被用于艺术相关的创作中。工程人员和艺术工作者应该理解这些方法改变与演进的动机。
+
+我们将会从一些基础开始，对于基础深刻的理解有助于我们开始探究PBR的新鲜技术。但是如果你能忍受我讲述你已经知道的部分，你将发现这些内容是值得一读的。你可能还会想去查看Joe Wilson的文章 《[Creating PBR artwork](http://www.marmoset.co/toolbag/learn/pbr-practice)》
+</code></pre><p>##<br>    Diffusion &amp; Reflection 漫反射和反射</p>
+<pre><code>漫反射和反射 - 对应于&amp;ldquo;漫射光&amp;rdquo;和&amp;ldquo;镜面反射光&amp;rdquo;，是两个用来描述最为基本的物体表面和光线交汇情况分类。实践上，大多数人比较熟悉这些概念，但是可能不清楚其具体的物理区别。
+
+When light hits a surface boundary some of it will reflect &amp;ndash; that is, bounce off &amp;ndash; from the surface and leave heading in a direction on the opposing side of the surface normal. This behavior is very similar to a ball thrown against the ground or a wall &amp;ndash; it will bounce off at the opposite angle. On a smooth surface this will result in a mirror-like appearance. The word &amp;ldquo;specular&amp;rdquo;, often used to describe the effect, is derived from the latin for &amp;ldquo;mirror&amp;rdquo; (it seems &amp;ldquo;specularity&amp;rdquo; sounds less awkward than &amp;ldquo;mirrorness&amp;rdquo;).
+
+Not all light reflects from a surface, however. Usually some will penetrate into the interior of the illuminated object. There it will either be absorbed by the material (usually converting to heat) or scattered internally. Some of this scattered light may make its way back out of the surface, then becoming visible once more to eyeballs and cameras. This is known by many names: &amp;ldquo;Diffuse Light&amp;rdquo;, &amp;ldquo;Diffusion&amp;rdquo;, &amp;ldquo;Subsurface Scattering&amp;rdquo; &amp;ndash; all describe the same effect.
+
+The absorption and scattering of diffuse light are often quite different for different wavelengths of light, which is what gives objects their color (e.g. if an object absorbs most light but scatters blue, it will appear blue). The scattering is often so uniformly chaotic that it can be said to appear the same from all directions &amp;ndash; quite different from the case of a mirror! A shader using this approximation really just needs one input: &amp;ldquo;albedo&amp;rdquo;, a color which describes the fractions of various colors of light that will scatter back out of a surface. &amp;ldquo;Diffuse color&amp;rdquo; is a phrase sometimes used synonymously.
+</code></pre>
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    <if ( theme.github_repo_widget) {>
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+<}>
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
