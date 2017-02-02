@@ -1,2 +1,3 @@
-Personal Blog
-Maintain using Hexo
+#godlzr.com / godlzr.github.io
+ * Personal Blog
+ * Maintain using Hexo
