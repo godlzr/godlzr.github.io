@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Zhongrui Li, godlzr@gmail.com"><title>Design Pattern - Structural · 1285 Richmond RD</title><meta name="description" content="结构型模式
+核心作用：是从程序的结构上实现松耦合，从而可以扩大整体的类结构，用来解决更大的问题
+分类：适配器模式，代理模式，桥接模式，装饰模式，组合模式，外观模式，享元模式。
+
+1.适配器模式 Adapter
+
+将一个类的接口转成希望的另一个接口，使得原来接口不兼容的类可以一起工作.
+模型中的角色
+"><meta name="keywords" content="Hexo,HTML,Ben,CSS,安卓,android,Linux,linuxdeepin"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img border="0" src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">1285 Richmond RD</a></h3><div class="description"><p>Youth is waste on the young</p></div></div></div><ul class="social-links"><li><a href="https://github.com/godlzr"><i class="fa fa-github"></i></a></li><li><a href="https://www.linkedin.com/in/zli109"><i class="fa fa-linkedin">     </i></a></li><li><a href="http://instagram.com/ggooddlzr"><i class="fa fa-instagram"></i></a></li><li><a href="https://twitter.com/godlzr"><i class="fa fa-twitter"></i></a></li><li><a href="/atom.xml"><i class="fa fa-rss"></i></a></li></ul><div class="footer"><a target="_blank" href="/"></a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Prowered by Hexo | Theme </a><a href="https://github.com/Ben02/hexo-theme-Anatole">Anatole</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/archives">Archive</a></li><li><a href="/links">Links</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="/images/avatar.jpg"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Design Pattern - Structural</a></h3></div><div class="post-content"><h1 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h1><ul>
+<li>核心作用：是从程序的结构上实现松耦合，从而可以扩大整体的类结构，用来解决更大的问题</li>
+<li>分类：适配器模式，代理模式，桥接模式，装饰模式，组合模式，外观模式，享元模式。</li>
+</ul>
+<p>1.<a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.structural/adapter" target="_blank" rel="external">适配器模式 Adapter</a></p>
+<ul>
+<li>将一个类的接口转成希望的另一个接口，使得原来接口不兼容的类可以一起工作.</li>
+<li>模型中的角色<ul>
+<li>目标接口（<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/adapter/Target.java" target="_blank" rel="external">Target</a>）：期待的接口，目标可以是具体的或抽象的类，也可以是接口。</li>
+<li>需要适配的类（<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/adapter/Adaptee.java" target="_blank" rel="external">Adaptee</a>）：需要适配的类或者适配者类</li>
+<li>适配器（Adapter）：通过包装一个需要适配的对象，把原接口转换成目标接口</li>
+<li>两种方式：<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/adapter/Adapter.java" target="_blank" rel="external">类继承</a>，或者<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/adapter/Adapter2.java" target="_blank" rel="external">类组合</a>的方式.</li>
+<li>场景：旧系统改造和升级</li>
+</ul>
+</li>
+</ul>
+<p>2.代理模式 Proxy Pattern</p>
+<ul>
+<li><p>通过代理，控制对对象的访问。可以详细控制访问某个对象的方法，在调用这个方法前做前置处理，后做后置处理，从而将统一流程代码放到代理类中处理。<br>AOP Aspect Oriented Programming面向切面编程的核心实现机制。</p>
+</li>
+<li><p>核心角色：</p>
+<ul>
+<li>抽象角色：定义代理角色和真实角色的公开对外方法</li>
+<li>真实角色：实现抽象角色，真正的业务逻辑，定义真实角色所需要实现的业务逻辑，供代理角色调用</li>
+<li>代理角色：实现抽象角色， 统一的控制流程在代理角色中处理，是真实角色的代理通过真实角色的业务逻辑方法来实现抽象方法，并可以附加自己的操作。<br>应用：安全代理，远程代理，延迟加载 </li>
+</ul>
+</li>
+<li><p>分类：</p>
+<ul>
+<li><a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.structural/staticProxy" target="_blank" rel="external">静态代理static</a></li>
+<li><a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/staticProxy/ProxySinger.java" target="_blank" rel="external">自己定义代理类</a></li>
+<li><a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.structural/dynamicProxy" target="_blank" rel="external">动态代理dynamic</a>（由程序生成代理类）动态代理:动态生成代理类，灵活统一 </li>
+</ul>
+</li>
+<li><p>JDK自带的动态代理 </p>
+</li>
+<li><p>java.lang.reflect.Proxy </p>
+</li>
+<li><p>java.lang.reflect.<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/dynamicProxy/SingerHandler.java" target="_blank" rel="external">InvocationHandler(</a>处理器接口) javaassist字节码操作库实现 </p>
+</li>
+<li><p>CGLIB</p>
+</li>
+<li><p>ASM（底层使用指令，可维护性差）</p>
+</li>
+</ul>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2015-08-16</span><i class="fa fa-comment-o"></i><a href="/2015/08/16/DesignPattern_Structural/#comments">Comments</a><i class="fa fa-tag"></i><a href="/categories/Design-Patterns/" title="Design Patterns" class="tag">Design Patterns </a></div></div></div></div><div class="share"><div class="evernote"> <a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"> <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"> <a href="http://twitter.com/home?status=,http://godlzr.com/2015/08/16/DesignPattern_Structural/,1285 Richmond RD,Design Pattern - Structural,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/2015/08/17/DesignPattern_Structural2/" title="Design Pattern - Structural 2" class="btn">prev_post</a></li><li class="next pagbuttons"><a role="navigation" href="/2015/08/14/DesignPattern_Creational2/" title="Design Pattern - Creational 2" class="btn">next_post</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'godlzr';
+var disqus_identifier = '2015/08/16/DesignPattern_Structural/';
+var disqus_title = 'Design Pattern - Structural';
+var disqus_url = 'http://godlzr.com/2015/08/16/DesignPattern_Structural/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//godlzr.disqus.com/count.js" async></script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
