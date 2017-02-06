@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Zhongrui Li, godlzr@gmail.com"><title>Design Pattern - Structural 2 · 1285 Richmond RD</title><meta name="description" content="桥接模式 Bridge
+多层继承结构 扩展性问题，类个数膨胀问题，违反单一职责原则
+处理多层继承 结构，处理 多维度变化场景，将各个维度设计成独立的继承结构，使各个维度可以独立的扩展在抽象层建立关系。
+  
+
+
+装饰模式 Decorator
+动态的为一个对象增加新的功能降低系统耦合度，具体类和装饰类"><meta name="keywords" content="Hexo,HTML,Ben,CSS,安卓,android,Linux,linuxdeepin"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img border="0" src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">1285 Richmond RD</a></h3><div class="description"><p>Youth is waste on the young</p></div></div></div><ul class="social-links"><li><a href="https://github.com/godlzr"><i class="fa fa-github"></i></a></li><li><a href="https://www.linkedin.com/in/zli109"><i class="fa fa-linkedin">     </i></a></li><li><a href="http://instagram.com/ggooddlzr"><i class="fa fa-instagram"></i></a></li><li><a href="https://twitter.com/godlzr"><i class="fa fa-twitter"></i></a></li><li><a href="/atom.xml"><i class="fa fa-rss"></i></a></li></ul><div class="footer"><a target="_blank" href="/"></a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Prowered by Hexo | Theme </a><a href="https://github.com/Ben02/hexo-theme-Anatole">Anatole</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/archives">Archive</a></li><li><a href="/links">Links</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="/images/avatar.jpg"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Design Pattern - Structural 2</a></h3></div><div class="post-content"><h1 id="桥接模式-Bridge"><a href="#桥接模式-Bridge" class="headerlink" title="桥接模式 Bridge"></a>桥接模式 <a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.structural/bridge" target="_blank" rel="external">Bridge</a></h1><ul>
+<li>多层继承结构 扩展性问题，类个数膨胀问题，违反单一职责原则</li>
+<li><p>处理多层继承 结构，处理 多维度变化场景，将各个维度设计成独立的继承结构，使各个维度可以独立的扩展在抽象层建立关系。</p>
+<p>  <a href="https://en.wikipedia.org/wiki/File:Bridge_UML_class_diagram.svg" target="_blank" rel="external"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Bridge_UML_class_diagram.svg" alt=""></a></p>
+</li>
+</ul>
+<h1 id="装饰模式-Decorator"><a href="#装饰模式-Decorator" class="headerlink" title="装饰模式 Decorator"></a>装饰模式 <a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.structural/decorator" target="_blank" rel="external">Decorator</a></h1><ul>
+<li>动态的为一个对象增加新的功能降低系统耦合度，具体类和装饰类可以独立变换。</li>
+<li>装饰模式是一种用于代替继承的技术，无须通过继承增加子类就能扩展对象的新功能。</li>
+<li>使用对象的关联关系代替继承关系更加灵活，避免类型体系的快速膨胀。</li>
+<li>Component抽象构件<ul>
+<li>ConcreteComponent具体构件（真实对象）</li>
+<li>Decorator装饰器</li>
+<li>ConcreteDecorator具体装饰器</li>
+</ul>
+</li>
+<li>也可称为Wrapper</li>
+<li><p>缺点：产生很多小对象，易出错，调试麻烦</p>
+<p>  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Decorator_UML_class_diagram.svg" alt=""></p>
+</li>
+</ul>
+<h1 id="组合模式-Composite"><a href="#组合模式-Composite" class="headerlink" title="组合模式 Composite"></a>组合模式 <a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.structural/composite" target="_blank" rel="external">Composite</a></h1><ul>
+<li>组合（A类中定义B类的对象b属性）与组合模式不同。</li>
+<li>把部分和整体的关系用树形结构来表示，从而使客户端可以使用统一的方式处理部分对象和整体对象。</li>
+<li>组合模式核心：<ul>
+<li>Component抽象构件角色：定义了叶子和容器构件的共同点</li>
+<li>Leaf叶子构件角色：无子节点</li>
+<li>Composite容器构件角色：有容器特征，可以包含子节点</li>
+</ul>
+</li>
+<li><p>场景：资源管理器，GUI容器层次，XML文件解析，组织结构处理，Junit单元测试框架</p>
+<p>  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Composite_UML_class_diagram_%28fixed%29.svg" alt=""></p>
+</li>
+</ul>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2015-08-17</span><i class="fa fa-comment-o"></i><a href="/2015/08/17/DesignPattern_Structural2/#comments">Comments</a><i class="fa fa-tag"></i><a href="/categories/Design-Pattern/" title="Design Pattern" class="tag">Design Pattern </a></div></div></div></div><div class="share"><div class="evernote"> <a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"> <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"> <a href="http://twitter.com/home?status=,http://godlzr.com/2015/08/17/DesignPattern_Structural2/,1285 Richmond RD,Design Pattern - Structural 2,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/2015/08/17/DesignPattern_Structural3/" title="Design Pattern - Structural 3" class="btn">prev_post</a></li><li class="next pagbuttons"><a role="navigation" href="/2015/08/16/DesignPattern_Structural/" title="Design Pattern - Structural" class="btn">next_post</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'godlzr';
+var disqus_identifier = '2015/08/17/DesignPattern_Structural2/';
+var disqus_title = 'Design Pattern - Structural 2';
+var disqus_url = 'http://godlzr.com/2015/08/17/DesignPattern_Structural2/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//godlzr.disqus.com/count.js" async></script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
