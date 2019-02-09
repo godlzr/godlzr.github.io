@@ -1,0 +1,30 @@
+---
+title: GPU 图形处理器
+id: 270
+categories:
+  - OpenGL
+date: 2015-08-02 23:20:18
+tags:
+---
+
+图形处理器（英语：Graphics Processing Unit，缩写：GPU），又称显示核心、视觉处理器、显示芯片，是一种专门在个人电脑、工作站、游戏机和一些移动设备（如平板电脑、智能手机等）上图像运算工作的微处理器。
+
+<div class="para" style="margin: 15px 0px 5px; text-indent: 2em; line-height: 24px; font-family: arial, 宋体, sans-serif; font-size: 14px;">
+	显卡的处理器称为图形处理器（GPU），它是显卡的&ldquo;心脏&rdquo;，与CPU类似，只不过GPU是专为执行复杂的数学和几何计算而设计的，这些计算是图形渲染所必需的。某些最快速的GPU集成的晶体管数甚至超过了普通CPU。
+</div>
+
+<div class="para" style="margin: 15px 0px 5px; text-indent: 2em; line-height: 24px; font-family: arial, 宋体, sans-serif; font-size: 14px;">
+	时下的GPU多数拥有2D或3D图形加速功能。如果CPU想画一个二维图形，只需要发个指令给GPU，如&ldquo;在坐标位置（x, y）处画个长和宽为a&times;b大小的长方形&rdquo;，GPU就可以迅速计算出该图形的所有像素，并在显示器上指定位置画出相应的图形，画完后就通知CPU &ldquo;我画完了&rdquo;，然后等待CPU发出下一条图形指令。&nbsp;
+</div>
+
+<div class="para" style="margin: 15px 0px 5px; text-indent: 2em; line-height: 24px; font-family: arial, 宋体, sans-serif; font-size: 14px;">
+	有了GPU，CPU就从图形处理的任务中解放出来，可以执行其他更多的系统任务，这样可以大大提高计算机的整体性能。<span style="font-family: arial, 宋体, sans-serif; font-size: 14px; line-height: 24px; text-indent: 28px;">GPU是显示卡的&ldquo;大脑&rdquo;，GPU决定了该显卡的档次和大部分性能，同时GPU也是2D显示卡和3D显示卡的区别依据。2D显示芯片在处理3D图像与特效时主要依赖CPU的处理能力，称为软加速。3D显示芯片是把三维图像和特效处理功能集中在显示芯片内，也就是所谓的&ldquo;</span>硬件加速<span style="font-family: arial, 宋体, sans-serif; font-size: 14px; line-height: 24px; text-indent: 28px;">&rdquo;功能。</span>
+</div>
+
+<div class="para" style="margin: 15px 0px 5px; text-indent: 2em; line-height: 24px; font-family: arial, 宋体, sans-serif; font-size: 14px;">
+	<span style="font-family: arial, 宋体, sans-serif; font-size: 14px; line-height: 24px; text-indent: 28px;">今天，GPU已经不再局限于3D图形处理了，GPU通用计算技术发展已经引起业界不少的关注，事实也证明在</span>浮点运算<span style="font-family: arial, 宋体, sans-serif; font-size: 14px; line-height: 24px; text-indent: 28px;">、</span>并行计算<span style="font-family: arial, 宋体, sans-serif; font-size: 14px; line-height: 24px; text-indent: 28px;">等部分计算方面，GPU可以提供数十倍乃至于上百倍于CPU的性能，如此强悍的&ldquo;新星&rdquo;难免会让CPU厂商老大</span>英特尔<span style="font-family: arial, 宋体, sans-serif; font-size: 14px; line-height: 24px; text-indent: 28px;">为未来而紧张， NVIDIA和英特尔也经常为CPU和GPU谁更重要而展开口水战。GPU通用计算方面的标准目前有 OPEN CL、CUDA、ATI STREAM。其中，OpenCL(全称Open Computing Language，开放运算语言)是第一个面向异构系统通用目的并行编程的开放式、免费标准，也是一个统一的</span>编程环境<span style="font-family: arial, 宋体, sans-serif; font-size: 14px; line-height: 24px; text-indent: 28px;">，便于软件开发人员为高性能计算服务器、桌面计算系统、手持设备编写高效轻便的代码，而且广泛适用于</span>多核心<span style="font-family: arial, 宋体, sans-serif; font-size: 14px; line-height: 24px; text-indent: 28px;">处理器(CPU)、图形处理器(GPU)、Cell类型架构以及</span>数字信号处理器<span style="font-family: arial, 宋体, sans-serif; font-size: 14px; line-height: 24px; text-indent: 28px;">(DSP)等其他并行处理器，在游戏、娱乐、科研、医疗等各种领域都有广阔的发展前景，</span>
+</div>
+
+<div class="para" style="margin: 15px 0px 5px; text-indent: 2em; line-height: 24px; font-family: arial, 宋体, sans-serif; font-size: 14px;">
+	<span style="font-family: arial, 宋体, sans-serif; font-size: 14px; line-height: 24px; text-indent: 28px;">简单说GPU就是能够从硬件上支持T&amp;L（Transform and Lighting，多边形转换和光源处理）的</span>显示芯片<span style="font-family: arial, 宋体, sans-serif; font-size: 14px; line-height: 24px; text-indent: 28px;">，由于T&amp;L是3D</span>渲染<span style="font-family: arial, 宋体, sans-serif; font-size: 14px; line-height: 24px; text-indent: 28px;">中的一个重要部分，其作用是计算多边形的3D位置与处理动态光线效果，也能称为&ldquo;几何处理&rdquo;。一个好的T&amp;L单元，能提供细致的3D物体和高级的光线特效；只不过大多数PC中，T&amp;L的大部分运算是交由CPU处理的(这就也就是所谓软件T&amp;L)，因为CPU的任务繁多，除了T&amp;L之外，还要做</span>内存管理<span style="font-family: arial, 宋体, sans-serif; font-size: 14px; line-height: 24px; text-indent: 28px;">和输入响应等非3D图形处理工作，所以在实际运算的时候性能会大打折扣，一般出现显卡等待CPU数据的情况，CPU运算速度远跟不上时下复杂三维游戏的要求。即使CPU的</span>工作频率<span style="font-family: arial, 宋体, sans-serif; font-size: 14px; line-height: 24px; text-indent: 28px;">超出1GHz或更高，对它的帮助也不大，因为这是PC本身设计造成的问题，与CPU的速度无太大关系。</span>
+</div>

@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Zhongrui Li, godlzr@gmail.com"><title>Design Pattern - Structural 3 · 1285 Richmond RD</title><meta name="description" content="外观模式 Facade
+迪米特法则：（最少知识原则）一个软件实体应当尽可能少的与其他实体发生相互作用。
+为子系统提供一个入口，封装子系统的复习性，便于客户端使用。最简单的设计模式。
+使用频率很高。
+  
+
+
+享元模式 FlyWeight（轻量级）
+如果存在很多完全相同或相似的对象，我们可以通过享元模"><meta name="keywords" content="Hexo,HTML,Ben,CSS,安卓,android,Linux,linuxdeepin"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img border="0" src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">1285 Richmond RD</a></h3><div class="description"><p>Youth is waste on the young</p></div></div></div><ul class="social-links"><li><a href="https://github.com/godlzr"><i class="fa fa-github"></i></a></li><li><a href="https://www.linkedin.com/in/zli109"><i class="fa fa-linkedin">     </i></a></li><li><a href="http://instagram.com/ggooddlzr"><i class="fa fa-instagram"></i></a></li><li><a href="https://twitter.com/godlzr"><i class="fa fa-twitter"></i></a></li><li><a href="/atom.xml"><i class="fa fa-rss"></i></a></li></ul><div class="footer"><a target="_blank" href="/"></a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Prowered by Hexo | Theme </a><a href="https://github.com/Ben02/hexo-theme-Anatole">Anatole</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/archives">Archive</a></li><li><a href="/links">Links</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="/images/avatar.jpg"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Design Pattern - Structural 3</a></h3></div><div class="post-content"><h1 id="外观模式-Facade"><a href="#外观模式-Facade" class="headerlink" title="外观模式 Facade"></a>外观模式 <a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.structural/facade" target="_blank" rel="external">Facade</a></h1><ul>
+<li>迪米特法则：（最少知识原则）一个软件实体应当尽可能少的与其他实体发生相互作用。</li>
+<li>为子系统提供一个入口，封装子系统的复习性，便于客户端使用。最简单的设计模式。</li>
+<li><p>使用频率很高。</p>
+<p>  <img src="https://upload.wikimedia.org/wikipedia/en/5/57/Example_of_Facade_design_pattern_in_UML.png" alt=""></p>
+</li>
+</ul>
+<h1 id="享元模式-FlyWeight（轻量级）"><a href="#享元模式-FlyWeight（轻量级）" class="headerlink" title="享元模式 FlyWeight（轻量级）"></a>享元模式 <a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.structural/flyweight" target="_blank" rel="external">FlyWeight</a>（轻量级）</h1><ul>
+<li><p>如果存在很多完全相同或相似的对象，我们可以通过享元模式，节省内存</p>
+</li>
+<li><p>以共享的方式高效的支持大量细粒度对象的重用。</p>
+</li>
+<li><p>区分了内部状态和外部状态：</p>
+<ul>
+<li>内部状态：可以共享，不会随环境的变化而改变。</li>
+<li><p>外部状体：不可以共享，会随环境变化而改变。</p>
+<p>例如围棋软件中的棋子对象有属性：颜色，形状，大小（内部状态，不会改变都一样，可以恭喜那个）位置（外部状态，不同，不可共享）</p>
+</li>
+</ul>
+</li>
+<li><a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/flyweight/ChessFlyWeightFactory.java" target="_blank" rel="external">FlyweightFactory</a>: 享元工厂类，创建并管理享元对象，享元池一般设计成键对值</li>
+<li><a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/flyweight/ChessFlyWeight.java" target="_blank" rel="external">Flyweight</a>：抽象享元类，通常是一个接口或抽象类，声明公共方法，这些方法可以向外界提供对象的内部状态，设置外部状态。</li>
+<li><a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/flyweight/ChessFlyWeight.java" target="_blank" rel="external">ConcreteFlyWeight</a>：具体的享元类，为内部状态提供成员变量进行存储</li>
+<li><p><a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/flyweight/Coordinate.java" target="_blank" rel="external">UnsharedConcreteFlyweight</a>：非共享享元类，不能被共享的子类可以设计外部状态</p>
+</li>
+<li><p>应用场景主要是线程池，数据连接池</p>
+</li>
+<li><p>优点：</p>
+<ul>
+<li>极大减少内存的对象数量</li>
+<li>相同相似的对象内存中只存一份，极大结缘资源，提高系统性能</li>
+<li>外部状态相对独立，不影响内部状态</li>
+</ul>
+</li>
+<li><p>缺点：</p>
+<ul>
+<li>模式复杂，使程序逻辑复杂化</li>
+<li>节省内存，共享内部状态，分离出外部状态，而读取外部状态是运行时间变长，时间换空间。<br><img src="http://www.dofactory.com/images/diagrams/net/flyweight.gif" alt=""></li>
+</ul>
+</li>
+</ul>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2015-08-17</span><i class="fa fa-comment-o"></i><a href="/2015/08/17/DesignPattern_Structural3/#comments">Comments</a><i class="fa fa-tag"></i><a href="/categories/Design-Pattern/" title="Design Pattern" class="tag">Design Pattern </a></div></div></div></div><div class="share"><div class="evernote"> <a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"> <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"> <a href="http://twitter.com/home?status=,http://godlzr.com/2015/08/17/DesignPattern_Structural3/,1285 Richmond RD,Design Pattern - Structural 3,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/2015/08/31/JavaAbstractClassInterface/" title="Java, difference between abstract class and interface" class="btn">prev_post</a></li><li class="next pagbuttons"><a role="navigation" href="/2015/08/17/DesignPattern_Structural2/" title="Design Pattern - Structural 2" class="btn">next_post</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'godlzr';
+var disqus_identifier = '2015/08/17/DesignPattern_Structural3/';
+var disqus_title = 'Design Pattern - Structural 3';
+var disqus_url = 'http://godlzr.com/2015/08/17/DesignPattern_Structural3/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//godlzr.disqus.com/count.js" async></script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
