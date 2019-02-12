@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Zhongrui Li"><title>Design Pattern - Structural · 1285 Richmond RD</title><meta name="description" content="结构型模式
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Author Name,name@example.com"><title>Design Pattern - Structural · 1285 Richmond RD</title><meta name="description" content="结构型模式
 核心作用：是从程序的结构上实现松耦合，从而可以扩大整体的类结构，用来解决更大的问题
 分类：适配器模式，代理模式，桥接模式，装饰模式，组合模式，外观模式，享元模式。
 
@@ -6,18 +6,18 @@
 
 将一个类的接口转成希望的另一个接口，使得原来接口不兼容的类可以一起工作.
 模型中的角色
-"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img border="0" src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">1285 Richmond RD</a></h3><div class="description"><p>Life is wasting time, but I don't want to stop</p></div></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"></a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Prowered by Hexo | Theme </a><a href="https://github.com/Ben02/hexo-theme-Anatole">Anatole</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/archives">Archive</a></li><li><a href="/links">Links</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="/images/avatar.jpg"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Design Pattern - Structural</a></h3></div><div class="post-content"><h1 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h1><ul>
+"><meta name="keywords" content="Hexo,HTML,CSS,android,Linux"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img border="0" src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">1285 Richmond RD</a></h3><div class="description"><p>Nothing lasts forever.</p></div></div></div><ul class="social-links"><li><a href="https://github.com/godlzr"><i class="fa fa-github"></i></a></li><li><a href="https://www.linkedin.com/in/zli109"><i class="fa fa-linkedin"> </i></a></li><li><a href="https://www.youtube.com/user/godlzr"><i class="fa fa-youtube">      </i></a></li><li><a href="http://instagram.com/ggooddlzr"><i class="fa fa-instagram"></i></a></li><li><a href="https://twitter.com/Aspirin_Ray"><i class="fa fa-twitter"></i></a></li></ul><div class="footer"><a target="_blank" href="/"></a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Prowered by Hexo | Theme </a><a href="https://github.com/Ben02/hexo-theme-Anatole">Anatole</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/archives">Archive</a></li><li><a href="/links">Links</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="/images/avatar.jpg"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Design Pattern - Structural</a></h3></div><div class="post-content"><h1 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h1><ul>
 <li>核心作用：是从程序的结构上实现松耦合，从而可以扩大整体的类结构，用来解决更大的问题</li>
 <li>分类：适配器模式，代理模式，桥接模式，装饰模式，组合模式，外观模式，享元模式。</li>
 </ul>
-<p>1.<a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.structural/adapter" target="_blank" rel="external">适配器模式 Adapter</a></p>
+<p>1.<a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.structural/adapter" target="_blank" rel="noopener">适配器模式 Adapter</a></p>
 <ul>
 <li>将一个类的接口转成希望的另一个接口，使得原来接口不兼容的类可以一起工作.</li>
 <li>模型中的角色<ul>
-<li>目标接口（<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/adapter/Target.java" target="_blank" rel="external">Target</a>）：期待的接口，目标可以是具体的或抽象的类，也可以是接口。</li>
-<li>需要适配的类（<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/adapter/Adaptee.java" target="_blank" rel="external">Adaptee</a>）：需要适配的类或者适配者类</li>
+<li>目标接口（<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/adapter/Target.java" target="_blank" rel="noopener">Target</a>）：期待的接口，目标可以是具体的或抽象的类，也可以是接口。</li>
+<li>需要适配的类（<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/adapter/Adaptee.java" target="_blank" rel="noopener">Adaptee</a>）：需要适配的类或者适配者类</li>
 <li>适配器（Adapter）：通过包装一个需要适配的对象，把原接口转换成目标接口</li>
-<li>两种方式：<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/adapter/Adapter.java" target="_blank" rel="external">类继承</a>，或者<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/adapter/Adapter2.java" target="_blank" rel="external">类组合</a>的方式.</li>
+<li>两种方式：<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/adapter/Adapter.java" target="_blank" rel="noopener">类继承</a>，或者<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/adapter/Adapter2.java" target="_blank" rel="noopener">类组合</a>的方式.</li>
 <li>场景：旧系统改造和升级</li>
 </ul>
 </li>
@@ -35,16 +35,16 @@
 </li>
 <li><p>分类：</p>
 <ul>
-<li><a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.structural/staticProxy" target="_blank" rel="external">静态代理static</a></li>
-<li><a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/staticProxy/ProxySinger.java" target="_blank" rel="external">自己定义代理类</a></li>
-<li><a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.structural/dynamicProxy" target="_blank" rel="external">动态代理dynamic</a>（由程序生成代理类）动态代理:动态生成代理类，灵活统一 </li>
+<li><a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.structural/staticProxy" target="_blank" rel="noopener">静态代理static</a></li>
+<li><a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/staticProxy/ProxySinger.java" target="_blank" rel="noopener">自己定义代理类</a></li>
+<li><a href="https://github.com/godlzr/GOF23_DesignPattern/tree/master/com.godlzr.GOF23.structural/dynamicProxy" target="_blank" rel="noopener">动态代理dynamic</a>（由程序生成代理类）动态代理:动态生成代理类，灵活统一 </li>
 </ul>
 </li>
 <li><p>JDK自带的动态代理 </p>
 </li>
 <li><p>java.lang.reflect.Proxy </p>
 </li>
-<li><p>java.lang.reflect.<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/dynamicProxy/SingerHandler.java" target="_blank" rel="external">InvocationHandler(</a>处理器接口) javaassist字节码操作库实现 </p>
+<li><p>java.lang.reflect.<a href="https://github.com/godlzr/GOF23_DesignPattern/blob/master/com.godlzr.GOF23.structural/dynamicProxy/SingerHandler.java" target="_blank" rel="noopener">InvocationHandler(</a>处理器接口) javaassist字节码操作库实现 </p>
 </li>
 <li><p>CGLIB</p>
 </li>
