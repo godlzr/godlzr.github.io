@@ -1,10 +1,10 @@
 ---
-title: [Issue] Xcode debugging cannot see the value of the local variable
-id:108
+title: "[Issue] Xcode debugging cannot see the value of the local variable"
+id: 108
 categories:
   - Issues Solution
 date: 2015-04-24 02:08:19
-tags: 
+tags:
 ---
 
 ### Resolution:

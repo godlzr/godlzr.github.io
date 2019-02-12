@@ -1,10 +1,10 @@
 ---
-title: [Issue] Can't find the C/C++ project option in Eclipse on Mac OS
-id:32
+title: "[Issue] Can't find the C/C++ project option in Eclipse on Mac OS"
+id: 32
 categories:
   - Issues Solution
 date: 2015-03-25 04:56:37
-tags: 
+tags:
   - Eclipse
   - MacOS
 ---

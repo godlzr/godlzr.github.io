@@ -1,7 +1,7 @@
 ---
-title: 平淡日子里的刺
+title: "平淡日子里的刺"
 id: 508
-categories:
+categories: 
   - Music
 date: 2015-10-12 21:20:06
 tags:
