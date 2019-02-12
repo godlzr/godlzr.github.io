@@ -5,7 +5,7 @@
 # Site
 title: 1285 Richmond RD
 subtitle: GODLZR's Blog
-description: Life is wasting time, but I don't want to stop
+description: Youth is waste on the young
 author: Zhongrui Li
 language: default
 # language: zh-Hans
@@ -83,4 +83,4 @@ deploy:
 social:
   github: godlzr
 #Disqus
-disqus_shortname: godlzr 
+disqus_shortname: godlzr
